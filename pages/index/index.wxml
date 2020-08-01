@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <image src="/imges/bg.png" class="bg"></image>
+  <image src="/imges/header.png" class="header"></image>
+  <view class="menu">
+      <view class="title">
+        <view class="name">叮咚决策器</view>
+        <view class="tips">不要纠结啦，帮你做决定!</view>
+      </view>
+      <view class="list">
+          <view wx:for="{{gamelist}}" class="gamelist {{item.classname}}" bindtap="gotoDetail" data-url="{{item.url}}">
+              <image src="{{item.imgsrc}}"></image>
+              <view class="itemname"> {{item.name}}</view>
+              <view class="itemtips"> {{item.tips}}</view>
+          </view>
+      </view>
+
+       <view class="infos">
+          <view class="tips1">{{infos1}}</view>
+          <view class="tips2">{{infos2}}</view>
+          <image src="/imges/snow.png"></image>
+      </view>
+
+      <view class="footer">
+        <image src="/imges/logo.svg"></image>
+      </view>
+  </view>
+</view>

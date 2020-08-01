@@ -1,0 +1,8 @@
+.back {
+    position: fixed;
+    top: 30px;
+    left: 11px;
+    width: 32px;
+    height: 32px;
+    z-index: 99;
+}

@@ -1,0 +1,1 @@
+<cover-image src="/imges/back.png"  mode='aspectFit' style=" top: {{navH}}px;" class='back' bindtap='navBack'></cover-image>

@@ -1,0 +1,5 @@
+<navigator class="navigator"></navigator>
+<view class='container'>
+  <image src="/imges/bg.png" class="bg"></image>
+  <image src="/imges/header.png" class="header"></image>
+</view>

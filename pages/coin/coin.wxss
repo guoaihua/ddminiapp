@@ -1,0 +1,19 @@
+/* pages/coin/coin.wxss */
+.container {
+    width: 100%;
+    height: 100%;
+    background: #F8D7A2;
+  }
+  
+  .bg {
+    width: 100%;
+    height: 325px;
+    position: absolute;
+  }
+  
+  .header {
+    width: 100%;
+    height: 328px;
+    position: absolute;
+    z-index: 9;
+  }
