@@ -1,0 +1,1 @@
+<image wx:for="{{imgLoadList}}" wx:key="*this" src="{{item}}" data-src="{{item}}" bindload="imgLoad" binderror="imgFail" style="width:0;height:0;opacity:0;display:none" ></image>

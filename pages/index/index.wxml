@@ -1,7 +1,6 @@
 <!--index.wxml-->
+<header></header>
 <view class="container">
-  <image src="/imges/bg.png" class="bg"></image>
-  <image src="/imges/header.png" class="header"></image>
   <view class="menu">
       <view class="title">
         <view class="name">叮咚决策器</view>

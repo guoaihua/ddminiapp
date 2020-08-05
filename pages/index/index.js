@@ -16,30 +16,35 @@ Page({
         imgsrc: '/imges/dice.png',
         name: '掷骰子',
         tips: '随机数',
-        classname: 'dice'
+        classname: 'dice',
+        url: '../dice/dice'
       },
       {
         imgsrc: '/imges/turnplate.png',
         name: '大转盘',
         tips: '多选一',
-        classname: 'turnplate'
+        classname: 'turnplate',
+        url: '../turnplate/turnplate'
       },      {
         imgsrc: '/imges/eatting.png',
         name: '今天吃什么',
         tips: '随机词',
-        classname: 'eatting'
+        classname: 'eatting',
+        url: '../eatting/eatting'
       },
       {
         imgsrc: '/imges/sport.png',
         name: '今天运动吗',
         tips: '二选一',
-        classname: 'sport'
+        classname: 'sport',
+        url: "../sport/sport"
       },
       {
         imgsrc: '/imges/random.png',
         name: '随机数生成',
         tips: '随机数',
-        classname: 'random'
+        classname: 'random',
+        url: '../random/random'
       }
     ],
     infos1: "更多功能开发中",
@@ -47,7 +52,7 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../logs/logs'
     })
   },
@@ -66,7 +71,7 @@ Page({
     console.log(e);
     let url = e.currentTarget.dataset.url;
     if(url){
-      wx.navigateTo({
+     wx.navigateTo({
         url: url,
         success: function(data){
           console.log(data);
