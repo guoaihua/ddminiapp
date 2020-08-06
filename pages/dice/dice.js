@@ -1,4 +1,5 @@
 // pages/dice/dice.js
+const App = getApp();
 Page({
 
     /**
@@ -10,12 +11,29 @@ Page({
             tips: "点击骰子或按钮开始掷骰子",
             start: "掷骰子"
         },
+        showDefault: true,
+        setdices: ['active','default','default'],
+        dicnum: 1
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        const self = this;
+        console.log(self);
+        this.setData({
+              navH: App.globalData.navHeight
+            })
+         // showHeaderbg: false
+        this.selectComponent("#header").hideheader();
+        this.animate('#cont',[
+         {top: "33.5%" },
+         {top: "12%"},
+         {top: "9.5%"}
+        ],500,function(){
+
+        }.bind(this))
 
     },
 
@@ -66,5 +84,18 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    diceSelect(e){
+        var index = e.currentTarget.dataset.index;
+        var arr = this.data.setdices;
+        if(arr[index]==='active'){
+            return;
+        }else {
+            arr = ["default","default","default"];
+            arr[index] = "active";
+        }
+        this.setData({
+            setdices: arr
+        })
     }
 })

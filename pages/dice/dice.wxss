@@ -50,9 +50,9 @@ opacity: 0.8;
 }
 
 .c_animation .coin_default{
-  width: 100px;
-  height: 69px;
-  margin-top: 331px;
+  width: 88px;
+  height: 94px;
+  margin-top: 241px;
 }
 
 .c_animation .coin_reverse {
@@ -106,4 +106,33 @@ font-weight: normal;
 font-size: 24px;
 line-height: 29px;
 color: #FFFFFF;
+}
+
+.setdices {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.setdices .dice-set {
+  display: inline-block;
+  border-radius: 83px;
+  width: 40px;
+  height: 40px;
+  background-color:#04A4FE;
+
+  font-family: "zihun144";
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 29px;
+color: #FFFFFF;
+margin-right: 10px;
+opacity: 0.2;
+cursor: pointer;
+-webkit-tap-highlight-color: transparent;
+outline: transparent;
+}
+
+.setdices .dice-set.active {
+  opacity: 1;
 }

@@ -21,7 +21,8 @@ Page({
         },
         gifpools: {
 
-        }
+        },
+        lastanswer: ''
     },
 
     /**
@@ -38,9 +39,9 @@ Page({
         this.animate('#cont',[
          {top: "33.5%" },
          {top: "12%"},
-         {top: "9.5%"}   
+         {top: "9.5%"}
         ],500,function(){
-        
+
         }.bind(this))
 
         // 预先下载2张gif
@@ -68,7 +69,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-    
+
     },
 
     /**
@@ -112,17 +113,18 @@ Page({
 
         var answer = "";
         answer = random > 0.5 ? "right" : "reverse";
-        var imgpools = self.data.gifpools;   
+        var imgpools = self.data.gifpools;
         if(!imgpools[answer]){
             wx.showToast({
               title: '糟糕，网络错误，请再试一次'
             })
             return;
-        }  
+        }
         this.setData({
             showDefault: false,
             answer: '',
-            imgsrc: imgpools[answer]
+            imgsrc: imgpools[answer],
+            lastanswer: answer
         });
         // 用完之后删除，加载下一个新的
         self.data.gifpools[answer] = null;
@@ -133,18 +135,13 @@ Page({
                 return;
             }
             self.data.gifpools[answer] = data.src
-         })
+        })
 
         setTimeout(function(){
-            self.animate("#answer",[
-                {scale:[0,0],opacity:1,rotate: -45},
-                {scale:[1,1],opacity:1, rotate:0}
-            ],300,function(err){
-console.log(err);
-            })
             self.setData({
+                animation: 'showanimate',
                 answer: answer === 'right'? '正': '反'
             });
-        },1800) 
+        },1500)
     }
 })

@@ -8,12 +8,19 @@
         <view class="gametips">{{game.tips}}</view>
       </view>
       <view class="c_animation">
-         <image wx:if="{{ showDefault}}" src="/imges/coin_deafault.png" class="coin_default"></image>
+         <view class="dices" wx:if="{{ showDefault}}">
+            <image  src="/imges/dice/dice1.png" class="coin_default"></image>
+             <image  src="/imges/dice/dice1.png" class="coin_default"></image>
+              <image  src="/imges/dice/dice1.png" class="coin_default"></image>
+         </view>
          <image wx:if="{{ imgsrc }}" src="{{imgsrc}}" class="coin_reverse"></image>
          <view wx:if="{{answer}}" class="anser" id="answer">{{answer}}</view>
       </view>
       <view class="c_btn" bindtap="clickbtn">
       {{game.start}}
+      </view>
+      <view class="setdices">
+        <view wx:for="{{setdices}}" class="dice-set {{item}}" data-index="{{index}}" bindtap="diceSelect">{{index+1}}</view>
       </view>
     </view>
 </view>
