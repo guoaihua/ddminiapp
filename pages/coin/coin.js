@@ -19,6 +19,7 @@ Page({
             reverse: "https://7a69-ziming-sslvb-1302777190.tcb.qcloud.la/static/coin_reverse.gif?sign=2054a14fe83095c723d2b6fda9d4a42f",
             right: "https://7a69-ziming-sslvb-1302777190.tcb.qcloud.la/static/coin_right.gif?sign=dbc9b8d5e8c1e2932ca2e4775d660964"
         },
+        coinsrc: 'https://7a69-ziming-sslvb-1302777190.tcb.qcloud.la/static/coin.mp3?sign=ee2c2e669b1a375777f6a3c9d80f8f49',
         gifpools: {
 
         },
@@ -30,7 +31,6 @@ Page({
      */
     onLoad: function (options) {
         const self = this;
-        console.log(self);
         this.setData({
               navH: App.globalData.navHeight
             })
@@ -44,6 +44,8 @@ Page({
 
         }.bind(this))
 
+        //下载音频
+        this.audioctx = wx.createAudioContext('myAudio');
         // 预先下载2张gif
        self.loader = this.selectComponent("#imgloader");
        let gifsrc = self.data.gifsrc;
@@ -120,12 +122,14 @@ Page({
             })
             return;
         }
+       
         this.setData({
             showDefault: false,
             answer: '',
             imgsrc: imgpools[answer],
             lastanswer: answer
         });
+         this.audioctx.play();
         // 用完之后删除，加载下一个新的
         self.data.gifpools[answer] = null;
 
@@ -142,6 +146,7 @@ Page({
                 animation: 'showanimate',
                 answer: answer === 'right'? '正': '反'
             });
+            wx.vibrateLong();
         },1500)
     }
 })

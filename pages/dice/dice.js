@@ -13,7 +13,11 @@ Page({
         },
         showDefault: true,
         setdices: ['active','default','default'],
-        dicnum: 1
+        dicnum: [{
+            id: 0,
+            src: '/imges/dice/dice1.png'
+        }],
+        cup_animation: ''
     },
 
     /**
@@ -88,14 +92,35 @@ Page({
     diceSelect(e){
         var index = e.currentTarget.dataset.index;
         var arr = this.data.setdices;
+        var dic = [];
         if(arr[index]==='active'){
             return;
         }else {
             arr = ["default","default","default"];
             arr[index] = "active";
         }
+        
+        for(let i = 0; i<= index;i++){
+            dic.push({
+                id: i,
+                src: '/imges/dice/dice1.png'
+            })
+        }
+
         this.setData({
-            setdices: arr
+            setdices: arr,
+            dicnum: dic
         })
+    },
+    clickbtn(e){
+        var self = this;
+        this.setData({
+            cup_animation: 'cup_animation'
+        });
+        setTimeout(()=>{
+            this.setData({
+                cup_animation: ''
+            });
+        },3100)
     }
 })
