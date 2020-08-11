@@ -17,7 +17,8 @@ Page({
             id: 0,
             src: '/imges/dice/dice1.png'
         }],
-        cup_animation: ''
+        cup_animation: '',
+        pending: false
     },
 
     /**
@@ -32,10 +33,9 @@ Page({
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
         this.animate('#cont',[
-         {top: "33.5%" },
-         {top: "12%"},
+         {top: "33.5%"},
          {top: "9.5%"}
-        ],500,function(){
+        ],300,function(){
 
         }.bind(this))
 
@@ -90,6 +90,10 @@ Page({
 
     },
     diceSelect(e){
+        //pending 状态不可点击
+        if(this.data.pending){
+            return;
+        }
         var index = e.currentTarget.dataset.index;
         var arr = this.data.setdices;
         var dic = [];
@@ -106,21 +110,40 @@ Page({
                 src: '/imges/dice/dice1.png'
             })
         }
-
         this.setData({
             setdices: arr,
             dicnum: dic
         })
     },
     clickbtn(e){
+    
+        if(this.data.pending){
+            return;
+        }
         var self = this;
         this.setData({
-            cup_animation: 'cup_animation'
+            cup_animation: 'cup_animation',
+            pending: true
         });
+
+        setTimeout(()=>{
+            var arr = this.data.dicnum;
+            arr.forEach((item,index)=>{
+                var random = parseInt(Math.random(0,1)*6+1);
+                item.src = `/imges/dice/dice${random}.png`
+            });
+            this.setData({
+                dicnum: arr
+            });
+            wx.vibrateLong();
+        },2300)
+
         setTimeout(()=>{
             this.setData({
-                cup_animation: ''
+                cup_animation: '',
+                pending: false
             });
-        },3100)
+        },3100);
+
     }
 })

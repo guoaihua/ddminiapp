@@ -5,7 +5,7 @@
     background: #F8D7A2;
     overflow: hidden;
   }
-  
+
 .cont {
   width: 83%;
   padding: 39px 8.5% 200px;
@@ -16,7 +16,7 @@
   border-top-right-radius: 16px;
   animation: ease-in-out 0.5ms ;
 
-}  
+}
 
 .c_title {
   text-align: center;
@@ -63,11 +63,14 @@ opacity: 0.8;
 }
 .c_animation .dices image {
   position: absolute;
+  overflow: hidden;
 }
+
 
 .c_animation .nums-2 .num-1 {
   top: 62.3%;
   left: 41%;
+
 }
 .c_animation .nums-2 .num-2 {
   animation: diceshow2 0.2s forwards;
@@ -76,6 +79,7 @@ opacity: 0.8;
 .c_animation .nums-3 .num-1 {
   top: 59.1%;
   left: 41%;
+
 }
 .c_animation .nums-3 .num-2 {
   left: 59%;
@@ -99,9 +103,11 @@ opacity: 0.8;
 
 @keyframes diceshow3 {
   0% {
+
     transform: scale(0,0);
   }
   100% {
+
     transform: scale(1,1);
     top: 70.6%;
     left: 28%;
@@ -127,12 +133,15 @@ opacity: 0.8;
 @keyframes cup {
   0% {
     top: -27%;
-    opacity: 0.7;
+    opacity: 0.9;
   }
+
+
   25% {
     top: 22%;
     opacity: 1;
   }
+
   35% {
     top: 22%;
     opacity: 1;
@@ -170,7 +179,7 @@ opacity: 0.8;
   95% {
     top: -27%;
     left: 50%;
-    opacity: 0.7;
+    opacity: 0.9;
   }
   100% {
     top: -27%;

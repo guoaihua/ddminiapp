@@ -1,4 +1,5 @@
 // pages/turnplate/turnplate.js
+const App = getApp();
 Page({
 
     /**
@@ -10,13 +11,27 @@ Page({
             tips: "点击按钮转盘开始，你可以给转盘命名",
             start: "大转盘"
         },
+        showDefault:true,
+        turnsrc: '/imges/turnplate/turn1.png'
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        const self = this;
+        console.log(self);
+        this.setData({
+              navH: App.globalData.navHeight
+            })
+         // showHeaderbg: false
+        this.selectComponent("#header").hideheader();
+        this.animate('#cont',[
+         {top: "33.5%"},
+         {top: "9.5%"}
+        ],300,function(){
 
+        }.bind(this))
     },
 
     /**

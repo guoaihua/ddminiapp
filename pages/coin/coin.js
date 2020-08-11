@@ -23,7 +23,8 @@ Page({
         gifpools: {
 
         },
-        lastanswer: ''
+        lastanswer: '',
+        pending: false
     },
 
     /**
@@ -38,9 +39,8 @@ Page({
         this.selectComponent("#header").hideheader();
         this.animate('#cont',[
          {top: "33.5%" },
-         {top: "12%"},
          {top: "9.5%"}
-        ],500,function(){
+        ],300,function(){
 
         }.bind(this))
 
@@ -109,6 +109,9 @@ Page({
 
     },
     clickbtn(){
+        if(this.data.pending){
+            return;
+        }
         // 生成随机数
         const self = this;
         var random = Math.random(0,1);
@@ -122,14 +125,17 @@ Page({
             })
             return;
         }
-       
+        // 将状态设置为pending，防止重复点击
         this.setData({
+            pending: true,
             showDefault: false,
             answer: '',
             imgsrc: imgpools[answer],
             lastanswer: answer
         });
+     
          this.audioctx.play();
+
         // 用完之后删除，加载下一个新的
         self.data.gifpools[answer] = null;
 
@@ -144,7 +150,8 @@ Page({
         setTimeout(function(){
             self.setData({
                 animation: 'showanimate',
-                answer: answer === 'right'? '正': '反'
+                answer: answer === 'right'? '正': '反',
+                pending: false
             });
             wx.vibrateLong();
         },1500)

@@ -7,7 +7,7 @@
         <view class="gamename">{{game.name}}</view>
         <view class="gametips">{{game.tips}}</view>
       </view>
-      <view class="c_animation">
+      <view class="c_animation" bindtap="clickbtn">
          <view class="dices nums-{{dicnum.length}}" wx:if="{{ showDefault}}">
             <image wx:for="{{dicnum}}"  src="{{item.src}}" class="dice_default num-{{item.id+1}}" ></image>
          </view>
