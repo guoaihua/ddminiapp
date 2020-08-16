@@ -13,7 +13,7 @@
          <view wx:if="{{answer}}" class="anser {{animation}}" id="answer">{{answer}}</view>
       </view>
       <view class="c_btn" bindtap="clickbtn">
-      {{game.start}}
+       <text class="{{pending ? 'disable' : '' }}">{{game.start}}</text>
       </view>
     </view>
 </view>

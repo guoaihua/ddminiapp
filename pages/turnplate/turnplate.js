@@ -12,7 +12,20 @@ Page({
             start: "大转盘"
         },
         showDefault:true,
-        turnsrc: '/imges/turnplate/turn1.png'
+        turnsrc: '/imges/turnplate/turn1.png',
+        turnplatelist: [
+            {
+               id:0,
+               name: '周杰伦'
+            },{
+                id:1,
+                name: '林俊杰'
+            },{
+                id:2,
+                name: '陈小春'
+            }
+        ],
+        pending: false
     },
 
     /**
@@ -27,8 +40,8 @@ Page({
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
         this.animate('#cont',[
-         {top: "33.5%"},
-         {top: "9.5%"}
+         {top: "33.5%",ease: 'ease-in-out'},
+         {top: "10.5%", ease: 'ease-in-out'}
         ],300,function(){
 
         }.bind(this))
@@ -80,6 +93,46 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
+
+    },
+    clickbtn(){
+        if(this.data.pending){
+            return;
+        }
+        var self = this;
+
+        this.clearAnimation('.turn_default')
+
+        var base = 360 / this.data.turnplatelist.length; //间隔
+        var random = Math.floor(Math.random()*2+1);
+    
+        var targetRotate = base*random + base/2; // 间隔的角度
+
+        console.log(random,targetRotate);
+
+        this.setData({
+            pending: true
+        })
+
+        
+
+        this.animate('.turn_default',[
+            {rotate: 0,ease:'ease-in-out'},
+            {rotate:360*10+targetRotate,ease:'ease-in-out'}
+        ],5000,()=>{
+            var arr = this.data.turnplatelist;
+            arr[random]['status'] = 'checked';
+            this.setData({
+                turnplatelist:arr
+            })
+            setTimeout(()=>{
+                arr[random]['status'] = '';
+                this.setData({
+                    turnplatelist:arr,
+                    pending: false
+                })
+            },2000)
+        });
 
     }
 })

@@ -8,8 +8,11 @@
         <view class="gametips">{{game.tips}}</view>
       </view>
       <view class="c_animation">
-         <image wx:if="{{ showDefault}}" src="/imges/turnplate/turnbg.png" class="turn_default"></image>
-         <image wx:if="{{ turnsrc }}" src="{{turnsrc}}" class="turn_plate"></image>
+          <view class="turn_default turns_{{turnplatelist.length}}">
+            <view class="turn_{{item.id+1}} {{item.status}}" wx:for="{{turnplatelist}}">
+                <text>{{item.name}}</text>
+            </view>
+          </view>
          <image  src="/imges/turnplate/turn-pointer.png" class="turn_pointer"></image>
          <view wx:if="{{answer}}" class="anser" id="answer">{{answer}}</view>
       </view>

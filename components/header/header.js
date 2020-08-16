@@ -22,10 +22,9 @@ Component({
      */
     methods: {
         hideheader(){
-            console.log(111);
             this.animate("#headerbg",[
-                {scale: [1,1],opacity:1},
-                {scale: [0.8,0.8],opacity:0}
+                {scale: [1,1],opacity:1,ease: 'ease-in-out'},
+                {scale: [0.8,0.8],opacity:0,ease: 'ease-in-out'}
             ],300)
         }
     }

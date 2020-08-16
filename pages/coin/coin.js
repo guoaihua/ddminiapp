@@ -32,17 +32,19 @@ Page({
      */
     onLoad: function (options) {
         const self = this;
+        console.log(App.globalData.navHeight);
         this.setData({
               navH: App.globalData.navHeight
             })
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
         this.animate('#cont',[
-         {top: "33.5%" },
-         {top: "9.5%"}
+         {top: "33.5%",ease: 'ease-in-out'},
+         {top: "10.5%",ease: 'ease-in-out'}
         ],300,function(){
 
         }.bind(this))
+
 
         //下载音频
         this.audioctx = wx.createAudioContext('myAudio');
@@ -112,6 +114,11 @@ Page({
         if(this.data.pending){
             return;
         }
+
+        // 点击成功时，给一个短震动
+
+        wx.vibrateShort();
+
         // 生成随机数
         const self = this;
         var random = Math.random(0,1);

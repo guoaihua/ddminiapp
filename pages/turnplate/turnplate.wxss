@@ -1,13 +1,17 @@
 /* pages/coin/coin.wxss */
+page {
+  overflow: hidden;
+}
 .container {
     width: 100%;
     height: 100%;
     background: #F8D7A2;
     overflow: hidden;
   }
-  
+
 .cont {
   width: 83%;
+  height: 83%;
   padding: 39px 8.5% 200px;
   position: absolute;
   top: 35.5%;
@@ -16,7 +20,7 @@
   border-top-right-radius: 16px;
   animation: ease-in-out 0.5ms ;
 
-}  
+}
 
 .c_title {
   text-align: center;
@@ -45,15 +49,156 @@ opacity: 0.8;
 
 .c_animation {
   text-align: center;
-  min-height: 57.4%;
+  position: 62.3%;
   position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  margin-top: 5%;
 }
 
 .c_animation .turn_default{
   width: 100%;
-  height: 346px;
-  margin-top: 54px;
+  padding-bottom: 100%;
+  border-radius: 100%;
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0px 20px 40px rgba(30, 79, 61, 0.1);
 }
+
+
+
+
+
+
+
+
+.turns_3 .turn_1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #F1FBFF;
+  overflow: hidden;
+}
+
+.turns_3 .turn_1 text {
+  position: absolute;
+  top: 27%;
+  right: 35%;
+  width: 120px;
+  color: #697A95;
+  font-size: 22px;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+  transform: rotate(-60deg);
+  text-align: center;
+  z-index: 999;
+}
+
+
+.turns_3 .turn_1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform-origin: left center;
+  transform: rotate(60deg);
+}
+
+.turns_3 .turn_2{
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #DFF3FC;
+  overflow: hidden;
+}
+.turns_3 .turn_2::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #D0E4EF;
+  transform-origin: top center;
+  transform: rotate(-150deg);
+}
+
+.turns_3 .turn_2::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F1FBFF;
+  transform-origin: top center;
+  transform: rotate(150deg);
+}
+
+.turns_3 .turn_2 text {
+  position: absolute;
+  bottom: 12%;
+  left: 32%;
+  width: 120px;
+  color: #697A95;
+  font-size: 22px;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+  text-align: center;
+  transform: rotate(180deg);
+  z-index:999;
+}
+
+
+.turns_3 .turn_3{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #D0E4EF;
+  overflow: hidden;
+}
+
+.turns_3 .turn_3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #DFF3FC;
+  transform-origin: right center;
+  transform: rotate(-60deg);
+}
+
+
+.turns_3 .turn_3 text {
+  position: absolute;
+  top: 26%;
+  left: 35%;
+  width: 120px;
+  color: #697A95;
+  font-size: 22px;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+  transform: rotate(60deg);
+  text-align: center;
+  z-index: 999;
+}
+
+
+
 
 .c_animation .turn_plate {
   position: absolute;
@@ -66,7 +211,7 @@ opacity: 0.8;
   width: 76px;
   height: 126px;
   position: absolute;
-  top: 50%;
+  top: 41%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
@@ -116,4 +261,22 @@ font-weight: normal;
 font-size: 24px;
 line-height: 29px;
 color: #FFFFFF;
+}
+
+.c_animation .checked {
+  animation: showchecked 2s ease-in-out;
+}
+
+@keyframes showchecked {
+  0%{
+    background-color: #00D387;
+    z-index: 99;
+  }
+  50% {
+    background-color: #D0E4EF;
+  }
+  100% {
+    background-color: #00D387;
+    z-index: 99;
+  }
 }

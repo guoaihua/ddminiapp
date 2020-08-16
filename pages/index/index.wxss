@@ -44,8 +44,8 @@ align-items: center;
 letter-spacing: -0.3px;
 opacity: 0.8;
 color: #2A2D32;
-margin-bottom: 20px;
-margin-top: 3px;
+margin-bottom: 5.76%;
+margin-top: 0.86%;
 }
 
 .list {
@@ -54,21 +54,18 @@ margin-top: 3px;
   justify-content: space-between;
 }
 .gamelist {
-  width: 142px;
+  width: 45%;
   height: 176px;
   position: relative;
   margin-bottom: 30px;
-  box-shadow: 0px 10px 20px rgba(255, 163, 25, 0.2);
-border-radius: 15px;
+  border-radius: 15px;
+  text-align: center;
 }
 
 .gamelist image {
   width: 142px;
   height: 142px;
-  filter: drop-shadow(0px 16px 20px rgba(124, 23, 159, 0.3));
-  position: absolute;
-  left: 0px;
-  top: 19px;
+  margin-top: 19px;
 }
 
 .gamelist .itemname {
@@ -81,6 +78,7 @@ border-radius: 15px;
   font-weight: normal;
   font-size: 24px;
   font-family: "zihun144";
+  margin-bottom: 2%;
 }
 
 .gamelist .itemtips {
@@ -102,34 +100,68 @@ font-family: Source Han Sans CN;
 
 .coin {
   background: #FFA31A;
+  box-shadow: 0px 10px 20px rgba(255, 163, 25, 0.2);
+}
+.coin image{
+  filter:  drop-shadow(0px 16px 30px rgba(180, 113, 13, 0.2));
 }
 
 .dice {
   background: #03A4FF;
+  box-shadow: 0px 10px 20px rgba(3, 164, 255, 0.2);
 }
+
+.dice image {
+  filter: drop-shadow(0px 16px 30px rgba(20, 122, 180, 0.3));
+}
+
 
 .turnplate {
   background: #00C67E;
+  box-shadow: 0px 10px 20px rgba(36, 209, 147, 0.2);
+}
+
+.turnplate image {
+  filter: drop-shadow(0px 16px 30px rgba(22, 136, 95, 0.2));
 }
 
 .eatting {
   background: #FF574D;
+  box-shadow: 0px 10px 20px rgba(255, 101, 91, 0.2);
+}
+
+.eatting image {
+  filter: drop-shadow(0px 16px 30px rgba(192, 50, 41, 0.2));
 }
 
 .sport {
   background: #D458FF;
+  box-shadow: 0px 10px 20px rgba(212, 88, 255, 0.2);
+}
+
+.sport image {
+  filter: drop-shadow(0px 16px 20px rgba(124, 23, 159, 0.3));
+
 }
 
 .random {
   background: #5374A5;
+  box-shadow: 0px 10px 20px rgba(102, 125, 159, 0.2);
 }
+
+.random image {
+  filter: drop-shadow(0px 16px 30px rgba(31, 69, 124, 0.3));
+}
+
+
+
 .menu .infos {
   width: 100%;
   padding: 23px;
   background: #FFFFFF;
 border: 1px solid #E6E8EE;
 box-sizing: border-box;
-box-shadow: 0px 10px 20px rgba(76, 93, 105, 0.05);
+box-shadow: 0px 10px 20px rgba(76, 93, 105, 0.15);
 border-radius: 15px;
 color: #2A2D32;
 opacity: 0.6;
@@ -150,8 +182,7 @@ right: 0px;
 }
 
 .footer {
-  margin-top: 40px;
-  margin-bottom: 50px;
+  padding: 40px;
   text-align: center;
 }
 .footer image{

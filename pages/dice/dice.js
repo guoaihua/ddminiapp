@@ -33,8 +33,8 @@ Page({
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
         this.animate('#cont',[
-         {top: "33.5%"},
-         {top: "9.5%"}
+         {top: "33.5%",ease: 'ease-in-out'},
+         {top: "10.5%", ease: 'ease-in-out'}
         ],300,function(){
 
         }.bind(this))
@@ -120,6 +120,9 @@ Page({
         if(this.data.pending){
             return;
         }
+
+        wx.vibrateShort();
+
         var self = this;
         this.setData({
             cup_animation: 'cup_animation',

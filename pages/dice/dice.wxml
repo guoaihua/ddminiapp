@@ -16,7 +16,7 @@
          </view>
       </view>
       <view class="c_btn" bindtap="clickbtn">
-      {{game.start}}
+          <text class="{{pending ? 'disable' : '' }}">{{game.start}}</text>
       </view>
       <view class="setdices">
         <view wx:for="{{setdices}}" class="dice-set {{item}}" data-index="{{index}}" bindtap="diceSelect">{{index+1}}</view>

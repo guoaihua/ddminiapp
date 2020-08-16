@@ -1,4 +1,7 @@
 /* pages/coin/coin.wxss */
+page {
+  overflow: hidden;
+}
 .container {
     width: 100%;
     height: 100%;
@@ -8,14 +11,13 @@
   
 .cont {
   width: 83%;
+  height: 83%;
   padding: 39px 8.5% 200px;
   position: absolute;
-  top: 35.5%;
+  top: 9.5%;
   background-color: #ffffff;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  animation: ease-in-out 0.5ms ;
-
 }  
 
 .c_title {
@@ -29,6 +31,7 @@ font-size: 24px;
 line-height: 29px;
 text-align: center;
 color: #2A2D32;
+margin-bottom: 2%;
 }
 
 .gametips {
@@ -45,19 +48,23 @@ opacity: 0.8;
 
 .c_animation {
   text-align: center;
-  min-height: 57.4%;
+  height: 66.3%;
   position: relative;
 }
 
 .c_animation .coin_default{
   width: 100px;
   height: 69px;
-  margin-top: 331px;
+  margin-top: 81.72%;
+  position: absolute;
+  bottom: 5.6%;
+  left: 50%;
+transform: translateX(-50%);
 }
 
 .c_animation .coin_reverse {
-  width: 267px;
-  height: 400px;
+  width: 76.38%;
+  height: 100%;
 }
 
 .c_animation .anser {
@@ -93,8 +100,8 @@ color: #FFFFFF;
 
 
 .c_btn {
-  margin-top: 45px;
-  padding: 13px 92px;
+  margin-top: 10%;
+  padding: 18px 92px;
   background: #FFA319;
 box-shadow: 0px 10px 20px rgba(255, 182, 73, 0.2);
 border-radius: 83px;
@@ -103,7 +110,7 @@ font-family: "zihun144";
 font-style: normal;
 font-weight: normal;
 font-size: 24px;
-line-height: 29px;
+line-height: 24px;
 color: #FFFFFF;
 }
 
@@ -111,14 +118,20 @@ color: #FFFFFF;
   0%{
     opacity: 1;
     transform: scale(0,0) rotate(-45deg);
+    transform-origin: 50% 102%;
   }
   100% {
     transform: scale(1,1) rotate(0);
     opacity: 1;
+    transform-origin: 50% 102%;
   }
 }
 
 
 .showanimate {
-  animation: showanswer linear 0.3s forwards;
+  animation: showanswer ease-in-out 0.3s forwards;
+}
+
+.disable {
+  opacity: 0.8;
 }
