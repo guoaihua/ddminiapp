@@ -25,7 +25,26 @@ Page({
                 name: '陈小春'
             }
         ],
-        pending: false
+        pending: false,
+        editlist: [
+            {
+                id: 3,
+                class: 'active'
+            },
+            {
+                id: 4,
+                class: ''
+            },
+            {
+                id: 5,
+                class: ''
+            },
+            {
+                id: 6,
+                class: ''
+            }
+        ],
+        showModal: false
     },
 
     /**
@@ -134,5 +153,38 @@ Page({
             },2000)
         });
 
+    },
+    edit(e){
+        var self = this;
+        var index = e.currentTarget.dataset.id;
+        var editlist = self.data.editlist;
+
+        if(editlist[index]['class'] === 'active'){
+            return ;
+        }
+
+        editlist.forEach((item,i)=>{
+            if(index === i){
+                item.class = 'active';
+            }else {
+                item.class = '';
+            }
+        });
+
+        self.setData({
+            editlist: editlist
+        })
+
+    },
+    editurn(){
+        var self = this;
+        self.setData({
+            showModal: true
+        })
+    },
+    cancel(){
+        this.setData({
+            showModal: false
+        })
     }
 })

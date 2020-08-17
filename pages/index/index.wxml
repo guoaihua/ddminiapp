@@ -5,6 +5,7 @@
       <view class="title">
         <view class="name">叮咚决策器</view>
         <view class="tips">不要纠结啦，帮你做决定!</view>
+        <image src="/imges/setting.png" bindtap="gotoDetail" data-url="../setting/setting"></image>
       </view>
       <view class="list">
           <view wx:for="{{gamelist}}" class="gamelist {{item.classname}}" bindtap="gotoDetail" data-url="{{item.url}}">
@@ -19,9 +20,7 @@
           <view class="tips2">{{infos2}}</view>
           <image src="/imges/snow.png"></image>
       </view>
-
-      <view class="footer">
-        <image src="/imges/logo.svg"></image>
+      <view class="more">
       </view>
   </view>
 </view>

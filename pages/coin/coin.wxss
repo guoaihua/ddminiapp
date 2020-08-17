@@ -114,6 +114,10 @@ line-height: 24px;
 color: #FFFFFF;
 }
 
+.c_btn:focus {
+  color: #FFA319;
+}
+
 @keyframes showanswer {
   0%{
     opacity: 1;

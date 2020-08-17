@@ -86,7 +86,7 @@ opacity: 0.8;
 
 }
 .c_animation .nums-3 .num-2 {
-  left: 59%;
+  left: 60%;
 }
 .c_animation .nums-3 .num-3 {
   top: 55.6%;
@@ -211,7 +211,7 @@ color: #FFFFFF;
 .setdices {
   text-align: center;
   padding: 10px 0;
-  margin-top: 1%;
+  margin-top: 2%;
 }
 
 .setdices .dice-set {

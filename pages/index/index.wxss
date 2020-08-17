@@ -22,7 +22,17 @@
 }
 
 .menu .title {
-  margin-top: 44px;
+  margin-top: 14%;
+  position: relative;
+}
+.menu .title image{
+  width: 26px;
+height: 24.3px;
+position: absolute;
+top: 50%;
+right: 0px;
+transform: translateY(-50%);
+z-index: 99;
 }
 
 .menu .title .name {
@@ -189,4 +199,9 @@ right: 0px;
   width: 123px;
   height: 39px;
 
+}
+
+.more {
+  width: 100%;
+  height: 70px;
 }

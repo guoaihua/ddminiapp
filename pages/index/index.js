@@ -70,6 +70,7 @@ Page({
   gotoDetail(e){
     console.log(e);
     let url = e.currentTarget.dataset.url;
+
     if(url){
      wx.navigateTo({
         url: url,
