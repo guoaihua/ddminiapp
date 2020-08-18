@@ -20,7 +20,7 @@
       {{game.start}}
       </view>
       <view class="c_edit">
-          <view wx:for="{{editlist}}" class="{{item.class}}" data-id="{{index}}" bindtap="edit">
+          <view wx:for="{{editlist}}" class="{{item.class}}" data-id="{{index}}" bindtap="selectTurn">
             {{item.id}} 
           </view>
           <image src="/imges/turnplate/edit.png" bindtap="editurn"></image>
@@ -31,10 +31,12 @@
   <view class="bg" bindtap="cancel"></view>
   <view class="modal-container">
       <view class="title">转盘命名</view>
-      <input type="text" placeholder="转盘一"></input>
+      <view class="inputs">
+            <input wx:for="{{templist}}" type="text" placeholder="{{item.name}}"  bindinput="bindKeyInput" data-id="{{item.id}}"> </input>
+      </view>
       <view class='footer'>
-          <view>取消</view>
-          <view>确定</view>
+          <view bindtap="cancel">取消</view>
+          <view bindtap="confirm">确定</view>
       </view>
   </view>
 </view>

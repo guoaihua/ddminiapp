@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/turnplate/turnplate",
     "pages/index/index",
+    "pages/turnplate/turnplate",
     "pages/dice/dice",
     "pages/coin/coin",
     "pages/eatting/eatting",
