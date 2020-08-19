@@ -1,2 +1,44 @@
-<!--pages/setting/setting.wxml-->
-<text>pages/setting/setting.wxml</text>
+<navigator class="navigator" navH="{{navH}}"></navigator>
+<header showHeaderbg="{{true}}" id="header" ></header> 
+<imgLoader id="imgloader"></imgLoader> 
+<view class="container">
+    <view class="cont" id="cont">
+        <view class="main"> 
+            <view class="nomal-setting">
+            <view class="title">通用设置</view> 
+            <view class="voice" bindtap="toggle" data-type="voice">
+                    <view class="name">音效</view>
+                    <view class="btnOuter {{voice.status}}">
+                        <view class="btnInner"></view>
+                    </view>
+            </view>
+            <view class="shake" bindtap="toggle" data-type="shake">
+                    <view class="name">震动</view>
+                    <view class="btnOuter {{shake.status}}">
+                        <view class="btnInner"></view>
+                    </view>
+            </view>
+            </view>
+            <view class="turn-setting">
+                <view class="title">「大转盘」设置</view> 
+            <view class="turn" bindtap="toggle" data-type="turn">
+                    <view class="name">转盘文字缓存</view>
+                    <view class="btnOuter {{turn.status}}">
+                        <view class="btnInner"></view>
+                    </view>
+            </view>
+            </view>
+            <view class="sport-setting">
+                <view class="title">「今天运动吗」设置</view> 
+            <view class="sport">
+                    <view class="name">运动/休息 选定概率</view>
+            </view>
+            </view>
+        </view>
+        <view class="footer">
+            <image src="/imges/setting/logo.svg"></image>
+            <view class="copyRight">Copyright © 2020 MAN! GO Studio.
+Designed by YorKun, Coded by ZiMing.</view>
+        </view>
+    </view>
+</view>

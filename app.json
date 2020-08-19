@@ -1,13 +1,14 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/setting/setting",
     "pages/turnplate/turnplate",
     "pages/dice/dice",
     "pages/coin/coin",
     "pages/eatting/eatting",
     "pages/sport/sport",
-    "pages/random/random",
-    "pages/setting/setting"
+    "pages/random/random"
+   
   ],
   "window":{
     "backgroundTextStyle":"light",

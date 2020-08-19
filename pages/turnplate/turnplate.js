@@ -209,6 +209,10 @@ Page({
           }
 
     },
+
+    getTurn(index){
+
+    },
     editurn() {
         var self = this;
         var temp = self.data.templist
@@ -230,7 +234,9 @@ Page({
     },
     cancel() {
         this.setData({
-            showModal: false
+            showModal: false,
+            templist2: [],
+            templist: [],
         })
     },
     confirm() {

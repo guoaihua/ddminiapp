@@ -1,18 +1,44 @@
 // pages/setting/setting.js
+const App = getApp();
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        
+        voice: {
+            status: 'on',
+            show: true
+        },
+        shake: {
+            status: 'off',
+            show: false
+        },
+        turn: {
+            status: 'on',
+            show: true
+        }
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        const self = this;
+        console.log(App.globalData.navHeight);
+        this.setData({
+              navH: App.globalData.navHeight
+            })
+         // showHeaderbg: false
+        this.selectComponent("#header").hideheader();
+        this.animate('#cont',[
+         {top: "33.5%",ease: 'ease-in-out'},
+         {top: "10.5%",ease: 'ease-in-out'}
+        ],300,function(){
 
+        }.bind(this))
     },
 
     /**
@@ -62,5 +88,20 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    toggle(e){
+     
+        var type = e.currentTarget.dataset.type;
+        var data = this.data[type];
+        if(data.show){
+            data.show = false;
+            data.status = 'off';
+        }else{
+            data.show = true;
+            data.status = 'on';
+        }
+        this.setData({
+            [type]: data
+        })
     }
 })
