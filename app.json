@@ -1,8 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/setting/setting",
     "pages/turnplate/turnplate",
+    "pages/setting/setting",
     "pages/dice/dice",
     "pages/coin/coin",
     "pages/eatting/eatting",

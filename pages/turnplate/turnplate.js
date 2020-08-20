@@ -128,9 +128,12 @@ Page({
         var self = this;
 
         this.clearAnimation('.turn_default')
-
-        var base = 360 / this.data.turnplatelist.length; //间隔
-        var random = Math.floor(Math.random() * 2 + 1);
+        
+        console.log(this.data.turnplatelist);
+        var turnlength = this.data.turnlength
+        // 根据turnlength 确认转盘个数
+        var base = 360 / turnlength; //间隔
+        var random = Math.round(Math.random() * turnlength); // 0 - length-1
 
         var targetRotate = base * random + base / 2; // 间隔的角度
 
@@ -139,9 +142,6 @@ Page({
         this.setData({
             pending: true
         })
-
-
-
         this.animate('.turn_default', [{
                 rotate: 0,
                 ease: 'ease-in-out'

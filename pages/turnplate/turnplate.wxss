@@ -217,24 +217,26 @@ white-space: nowrap;
   position: absolute;
 }
 
+.turns_4>view text {
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 120px;
+  color: #697A95;
+  text-align: center;
+  z-index: 999;
+}
+
 .turns_4 .turn_1 {
   background: #F1FBFF;
 }
 
 .turns_4 .turn_1 text {
   position: absolute;
-  top: 26%;
-  left: 29%;
-  width: 120px;
-  color: #697A95;
-  font-size: 18px;
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-  transform: rotate(60deg);
-  text-align: center;
-  z-index: 999;
-  
+  top: 33%;
+  left: 6%;
+  transform: rotate(-45deg);
 }
 
 
@@ -243,16 +245,128 @@ white-space: nowrap;
   background: #D0E4EF;
 }
 
+.turns_4 .turn_2 text {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: rotate(-135deg);  
+}
+
+
+
+
 .turns_4 .turn_3 {
   background: #F1FBFF;
   bottom: 0;
   right: 0;
 }
 
+.turns_4 .turn_3 text {
+  position: absolute;
+  top: 50%;
+  left: 18%;
+  transform: rotate(135deg); 
+}
+
 .turns_4 .turn_4 {
   right: 0;
   background: #D0E4EF;
 }
+.turns_4 .turn_4 text {
+  position: absolute;
+  top: 32%;
+  left: 21%;
+  transform: rotate(45deg);
+}
+
+.turns_5>view {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+}
+
+.turns_5>view text {
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 120px;
+  color: #697A95;
+  text-align: center;
+  z-index: 999;
+  position: absolute;
+}
+
+
+.turns_5 .turn_1 {
+  background: #F1FBFF;
+  transform: rotate(15deg);
+  transform-origin: bottom right;  
+}
+
+.turns_5 .turn_1 text {
+  top: 45%;
+  left: 3%;
+  transform: rotate(-52deg);
+}
+
+
+
+
+
+.turns_5 .turn_2 {
+  background: #D0E4EF;
+  transform: rotate(15deg);
+  transform-origin: top right;
+  bottom: 0;  
+}
+.turns_5 .turn_2 text {
+  top: 34%;
+  left: -1%;
+  transform: rotate(-124deg);  
+}
+
+.turns_5 .turn_3 {
+  background: #F1FBFF;
+  transform: rotate(36deg);
+  transform-origin: top left;
+  bottom: 0;
+  right: 0;
+}
+
+.turns_5 .turn_3 text{
+  top: 57%;
+  left: 10%;
+  transform: rotate(144deg);  
+}
+
+.turns_5 .turn_4 {
+  background: #DFF3FC;
+  transform: rotate(-36deg);
+  transform-origin: top left;
+  bottom: 0;
+  right: 0;  
+}
+
+.turns_5 .turn_4 text {
+  top: 60%;
+  left: 11%;
+  transform: rotate(143deg);  
+}
+
+.turns_5 .turn_5 {
+  background: #D0E4EF;
+  transform: rotate(-18deg) skew(-18deg);
+  transform-origin: bottom left;
+  top: 0;
+  right: 0;  
+}
+.turns_5 .turn_5 text {
+  top: 50%;
+  left: 9%;
+  transform: rotate(43deg) skew(0deg);
+}
+
 
 .c_animation .turn_plate {
   position: absolute;
