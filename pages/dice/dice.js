@@ -1,5 +1,7 @@
 // pages/dice/dice.js
 const App = getApp();
+const {vibrateLong, vibrateShort} = require("../../utils/util");
+
 Page({
 
     /**
@@ -18,7 +20,8 @@ Page({
             src: '/imges/dice/dice1.png'
         }],
         cup_animation: '',
-        pending: false
+        pending: false,
+        dicesrc: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/dice.mp3?sign=f9ab584e1a2d964ecfa5ce0f77209ae6',
     },
 
     /**
@@ -38,6 +41,9 @@ Page({
         ],300,function(){
 
         }.bind(this))
+
+             //下载音频
+       this.audioctx = App.globalData.config.useVoice && wx.createAudioContext('myAudio');
 
     },
 
@@ -121,13 +127,18 @@ Page({
             return;
         }
 
-        wx.vibrateShort();
+        vibrateShort();
 
         var self = this;
         this.setData({
             cup_animation: 'cup_animation',
             pending: true
         });
+
+        setTimeout(()=>{
+            this.audioctx && this.audioctx.play();
+        },800)
+       
 
         setTimeout(()=>{
             var arr = this.data.dicnum;
@@ -138,7 +149,7 @@ Page({
             this.setData({
                 dicnum: arr
             });
-            wx.vibrateLong();
+            vibrateLong();
         },2300)
 
         setTimeout(()=>{

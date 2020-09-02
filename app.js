@@ -17,9 +17,15 @@ App({
         console.log(err);
       }
     })  
+
+    // 从缓存中取出配置
+    this.globalData.config = wx.getStorageSync('config')
+    
+
   },
   globalData: {
     userInfo: null,
-    navHeight: 0
+    navHeight: 0,
+    config: {useVoice: true, useShake: true, useCache: true, sportRatio: "6:5"}
   }
 })

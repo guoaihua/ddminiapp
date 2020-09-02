@@ -10,16 +10,21 @@ Page({
         
         voice: {
             status: 'on',
-            show: true
+            show:true
         },
         shake: {
-            status: 'off',
-            show: false
+            status: 'on',
+            show: true
         },
         turn: {
             status: 'on',
             show: true
-        }
+        },
+        checkboxItems: [
+            {name: '5:5', checked: false},
+            {name: '6:5',  checked: true},
+            {name: '7:5', checked: false}
+        ],
     },
 
     /**
@@ -27,10 +32,14 @@ Page({
      */
     onLoad: function (options) {
         const self = this;
-        console.log(App.globalData.navHeight);
+        const config = App.globalData.config;
+        
         this.setData({
-              navH: App.globalData.navHeight
-            })
+            navH: App.globalData.navHeight
+        })
+
+
+ 
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
         this.animate('#cont',[
@@ -39,6 +48,37 @@ Page({
         ],300,function(){
 
         }.bind(this))
+
+        if(!config){
+            return;
+        }
+ 
+        var items = this.data.checkboxItems
+        items.forEach((item,index)=>{
+            console.log(item.name, config.sportRatio);
+            if(item.name === config.sportRatio){
+                item.checked = true
+            }else {
+                item.checked = false
+            }
+        });
+
+        this.setData({
+              checkboxItems: items,
+              voice: {
+                status: config.useVoice ? 'on': 'off',
+                show: config.useVoice
+            },
+            shake: {
+                status: config.useShake ? 'on': 'off',
+                show: config.useShake
+            },
+            turn: {
+                status: config.useCache ? 'on': 'off',
+                show: config.useCache
+            }
+            })
+
     },
 
     /**
@@ -67,6 +107,28 @@ Page({
      */
     onUnload: function () {
 
+    },
+    save(){
+    // 每次设置页面时，将数据存入缓存
+    var useVoice = this.data.voice.show;
+    var useShake = this.data.shake.show;
+    var useCache = this.data.turn.show;
+    var sportRatio = this.data.checkboxItems.filter((item)=>item.checked)[0].name;
+
+    var data =  {
+        useVoice:useVoice,
+        useShake:useShake,
+        useCache:useCache,
+        sportRatio:sportRatio
+      }
+
+    wx.setStorage({
+      data:data,
+      key: 'config'
+    });
+    // 同时将数据实时更新到全局
+    App.globalData.config = data;
+    console.log( App.globalData.config);
     },
 
     /**
@@ -102,6 +164,25 @@ Page({
         }
         this.setData({
             [type]: data
-        })
+        });
+        this.save();
+    },
+    setSports(e){
+        console.log(e);
+        var cur = e.currentTarget.dataset.index;
+        var checkboxItems = this.data.checkboxItems;
+
+        checkboxItems.forEach((item,index)=>{
+            if(cur === index){
+                item['checked'] = true;
+            }else {
+                item['checked'] = false;
+            }
+        });
+
+        this.setData({
+            checkboxItems: checkboxItems
+        });
+        this.save();
     }
 })

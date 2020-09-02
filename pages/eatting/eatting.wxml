@@ -1,2 +1,23 @@
-<!--eatting/eatting/eatting.wxml-->
-<text>eatting/eatting/eatting.wxml</text>
+<navigator class="navigator" navH="{{navH}}"></navigator>
+<header showHeaderbg="{{true}}" id="header" ></header> 
+<imgLoader id="imgloader"></imgLoader> 
+<view class="container">
+    <view class="cont" id="cont">
+      <view class="c_title">
+        <view class="gamename">{{game.name}}</view>
+        <view class="gametips">{{game.tips}}</view>
+      </view>
+      <view class="c_animation">
+            <view class="default" wx:if="{{status === 'start'}}">?</view>
+            <view class="ques" wx:elif="{{status === 'ques'}}">
+            <image   src="/imges/eatting/food.gif"></image> </view> 
+            <view class="answer" wx:else>
+              <view class="text">{{result}}</view>
+             </view>
+            <image class="plate" src="/imges/eatting/eatbg.png"></image>
+      </view>
+      <view class="c_btn {{pending ? 'disable' : '' }}" bindtap="clickbtn" >
+      {{game.start}}
+      </view>
+    </view>
+</view>

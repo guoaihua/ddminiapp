@@ -5,4 +5,5 @@
     width: 32px;
     height: 32px;
     z-index: 99;
+    -webkit-tap-highlight-color: transparent;
 }

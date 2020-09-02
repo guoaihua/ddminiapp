@@ -2,12 +2,15 @@
   "pages":[
     "pages/index/index",
     "pages/turnplate/turnplate",
+   
     "pages/setting/setting",
-    "pages/dice/dice",
-    "pages/coin/coin",
+    "pages/random/random",
     "pages/eatting/eatting",
     "pages/sport/sport",
-    "pages/random/random"
+
+  
+    "pages/dice/dice",
+    "pages/coin/coin"
    
   ],
   "window":{
@@ -18,5 +21,8 @@
     "navigationStyle": "custom"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
 }

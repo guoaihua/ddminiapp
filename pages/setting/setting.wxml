@@ -30,9 +30,17 @@
             </view>
             <view class="sport-setting">
                 <view class="title">「今天运动吗」设置</view> 
-            <view class="sport">
-                    <view class="name">运动/休息 选定概率</view>
-            </view>
+                <view class="sport">
+                        <view class="name">运动/休息 选定概率</view>
+                        <view class="tips">生命在于运动</view>
+                </view>
+                <view class="lists">
+                    <view wx:for="{{checkboxItems}}" bindtap="setSports" data-index="{{index}}">
+                      <view class="btn_circ {{item.checked && 'checked'}}"></view>
+                      {{item.name}}
+                    </view>
+                </view>
+
             </view>
         </view>
         <view class="footer">

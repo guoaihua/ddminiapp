@@ -2,6 +2,7 @@
   "usingComponents": {
     "navigator": "/components/navigator/navigator",
     "header": "/components/header/header",
-    "imgLoader": "/components/imgloader/imgloader"
+    "imgLoader": "/components/imgloader/imgloader",
+    "mp-icon": "weui-miniprogram/icon/icon"
   }
 }

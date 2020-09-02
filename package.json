@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/guoaihua/ddminiapp/issues"
   },
-  "homepage": "https://github.com/guoaihua/ddminiapp#readme",
-  "dependencies": {
-    "weui-miniprogram": "^1.0.5"
-  }
+  "homepage": "https://github.com/guoaihua/ddminiapp#readme"
 }

@@ -1,1 +1,169 @@
 /* random/random/random.wxss */
+/* eatting/eatting/eatting.wxss */
+/* sport/sport/sport.wxss */
+page {
+    overflow: hidden;
+  }
+.container {
+    width: 100%;
+    height: 100%;
+    background: #F8D7A2;
+    overflow: hidden;
+  }
+  
+.cont {
+  width: 83%;
+  height: 90%;
+  padding: 0px 8.5%;
+  position: absolute;
+  top: 9.5%;
+  background-color: #ffffff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  display: flex;
+flex-direction: column;
+justify-content: space-around;
+
+}  
+
+.c_title {
+    text-align: center;
+  }
+  .gamename {
+  font-family: "zihun144";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #2A2D32;
+  margin-bottom: 3%;
+  }
+  
+  .gametips {
+    font-family: Source Han Sans CN;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.3px;
+  color: #2A2D32;
+  opacity: 0.8;
+  }
+  
+
+  .c_btn {
+    padding: 18px 92px;
+    background: #D458FF;
+    box-shadow: 0px 10px 20px rgba(212, 88, 255, 0.2);
+    border-radius: 100px;
+  text-align: center;
+  font-family: "zihun144";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  color: #FFFFFF;
+  }
+
+  .selector {
+    width: 80%;
+    background: #E1E8F2;
+    border-radius: 14px;
+    padding: 10% 10%;
+  }
+
+  .top {
+    font-family: "zihun144";
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10%;
+  }
+
+  .top>view {
+    font-family: PingFang SC;
+font-size: 17px;
+    padding: 9px 10px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin: 0 12px;
+  }
+
+  .bottom {
+    font-family: "zihun144";
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+  
+  .bottom>view {
+    font-family: PingFang SC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 10px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    margin-left: 12px;
+  }
+
+  .tips {
+    margin-top: 3%;
+    text-align: center;
+  }
+
+  view>input {
+    width: 25px;
+text-align: center;
+  }
+  
+  .dices {
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap-reverse;
+  }
+
+  .dice {
+    width: 70px;
+    height: 70px;
+    color: #ffffff;
+    border-radius: 12px;
+    background: #5374A5;
+    font-size: 38px;
+    font-family: "zihun144";
+    text-align: center;
+    line-height: 60px;
+    position: relative;
+    margin-right: 2%;
+    margin-bottom: 5%;
+    animation: opacity 0.3s ease-in-out;
+  }
+
+  .dice::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+
+    border-top:26px solid #5374A5;
+    border-left:19px  solid transparent;
+    border-right:19px solid transparent;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: -10px;
+  }
+
+  .dice-small {
+    width: 60px;
+    height: 60px;
+  }
+
+  @keyframes opacity {
+    0%{
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

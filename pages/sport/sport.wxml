@@ -7,10 +7,15 @@
         <view class="gamename">{{game.name}}</view>
         <view class="gametips">{{game.tips}}</view>
       </view>
-      <view class="c_animation">
-         <image wx:if="{{ showDefault}}" src="/imges/coin_deafault.png" class="coin_default"></image>
-         <image wx:if="{{ imgsrc }}" src="{{imgsrc}}" class="coin_reverse"></image>
-         <view wx:if="{{answer}}" class="anser" id="answer">{{answer}}</view>
+      <view class="c_animation {{animate}}">
+         <view class="left">
+            <image src="/imges/sport/sport.png"></image>
+            <view> {{game.sport}}</view>
+         </view>
+         <view class="right">
+                 <image src="/imges/sport/rest.png"></image>
+            <view> {{game.rest}}</view>
+         </view>
       </view>
       <view class="c_btn" bindtap="clickbtn">
       {{game.start}}

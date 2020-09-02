@@ -1,3 +1,6 @@
+
+const config = getApp().globalData.config;
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -14,6 +17,17 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const vibrateShort = n => {
+  config.useShake && wx.vibrateShort();
+}
+
+const vibrateLong = n => {
+  config.useShake && wx.vibrateLong();
+}
+
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  vibrateShort,
+  vibrateLong
 }

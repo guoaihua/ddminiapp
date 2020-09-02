@@ -19,7 +19,10 @@ page {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   animation: ease-in-out 0.5ms ;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
 }
 
 .c_title {
@@ -33,7 +36,7 @@ font-size: 24px;
 line-height: 29px;
 text-align: center;
 color: #2A2D32;
-margin-bottom: 2%;
+margin-bottom: 3%;
 }
 
 .gametips {
@@ -111,7 +114,7 @@ white-space: nowrap;
 }
 
 
-.turns_3 .turn_1::before {
+.turns_3>.turn_1::before {
   content: "";
   position: absolute;
   top: 0;
@@ -132,7 +135,7 @@ white-space: nowrap;
   background-color: #DFF3FC;
   overflow: hidden;
 }
-.turns_3 .turn_2::before{
+.turns_3>.turn_2::before{
   content: "";
   position: absolute;
   top: 0;
@@ -144,7 +147,7 @@ white-space: nowrap;
   transform: rotate(-150deg);
 }
 
-.turns_3 .turn_2::after{
+.turns_3>.turn_2::after{
   content: "";
   position: absolute;
   top: 0;
@@ -182,7 +185,7 @@ white-space: nowrap;
   overflow: hidden;
 }
 
-.turns_3 .turn_3::before {
+.turns_3>.turn_3::before {
   content: "";
   position: absolute;
   top: 0;
@@ -368,6 +371,107 @@ white-space: nowrap;
 }
 
 
+.turns_6>view {
+  position: absolute;
+  background-color: transparent!important;
+}
+
+
+.turns_6>view text {
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 90px;
+  height: 25px;
+  line-height: 25px;
+  color: #697A95;
+  text-align: center;
+  z-index: 999;
+  position: absolute;
+  top: 100px;
+  right: -26px;
+  transform: rotate(-60deg);  
+  
+}
+
+.turns_6>.turn_1 {
+  border-bottom: 180px solid #F1FBFF;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  left: 50%;
+  transform-origin: bottom right;
+  transform: translate(-50%,-50%) rotate(30deg);
+  top: 50%;
+  margin-top: -90px;
+  margin-left: -100px;  
+}
+
+.turns_6>.turn_1 text {
+  top: 96px;
+  right: -33px;
+}
+
+.turns_6>.turn_2 {
+  border-bottom: 180px solid #D0E4EF;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  left: 50%;
+  transform-origin: bottom right;
+  transform: translate(-50%,-50%) rotate(-30deg);
+  top: 50%;
+  margin-top: -90px;
+  margin-left: -100px;  
+}
+.turns_6>.turn_3 {
+  border-bottom: 180px solid #DFF3FC;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  left: 50%;
+  transform-origin: bottom right;
+  transform: translate(-50%,-50%) rotate(-90deg);
+  top: 50%;
+  margin-top: -90px;
+  margin-left: -100px;  
+}
+
+.turns_6>.turn_4 {
+  border-bottom: 180px solid #F1FBFF;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  left: 50%;
+  transform-origin: bottom right;
+  transform: translate(-50%,-50%) rotate(-150deg);
+  top: 50%;
+  margin-top: -90px;
+  margin-left: -100px;  
+}
+.turns_6>.turn_5 {
+  border-bottom: 180px solid #D0E4EF;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  left: 50%;
+  transform-origin: bottom right;
+  transform: translate(-50%,-50%) rotate(-210deg);
+  top: 50%;
+  margin-top: -90px;
+  margin-left: -100px;  
+}
+.turns_6>.turn_6 {
+  border-bottom: 180px solid #DFF3FC;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  left: 50%;
+  transform-origin: bottom right;
+  transform: translate(-50%,-50%) rotate(-270deg);
+  top: 50%;
+  margin-top: -90px;
+  margin-left: -100px;  
+}
+
+
+
+
 .c_animation .turn_plate {
   position: absolute;
   width: 312px;
@@ -431,7 +535,7 @@ line-height: 29px;
 color: #FFFFFF;
 }
 
-.c_animation .checked {
+.c_animation .checked_3,.c_animation .checked_4,.c_animation .checked_5 {
   animation: showchecked 2s ease-in-out;
 }
 
@@ -448,10 +552,44 @@ color: #FFFFFF;
     z-index: 99;
   }
 }
+.c_animation .checked_5 {
+  animation: checked5 2s ease-in-out;
+}
+
+@keyframes checked5 {
+  0%{
+    background-color: #00D387;
+  }
+  50% {
+    background-color: #D0E4EF;
+  }
+  100% {
+    background-color: #00D387;
+  }
+}
+
+.c_animation .checked_6 {
+  animation: checked6 2s ease-in-out;
+}
+
+
+@keyframes checked6 {
+  0%{
+    border-bottom: 180px solid #00D387;
+    z-index: 99;
+  }
+  50% {
+    border-bottom: 180px solid #D0E4EF;
+  }
+  100% {
+    border-bottom: 180px solid #00D387;
+    z-index: 99;
+  }
+}
 
 .c_edit {
   display: flex;
-  margin-top: 5%;
+  margin-top: 2%;
   justify-content: center;
 }
 

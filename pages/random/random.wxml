@@ -7,10 +7,29 @@
         <view class="gamename">{{game.name}}</view>
         <view class="gametips">{{game.tips}}</view>
       </view>
+      <view class="dices">
+        <view wx:for="{{ranklist}}" class="dice dice-{{ranklist.length>=8?'small': ''}}">
+          {{item}}
+        </view>
+      </view>
       <view class="c_animation">
-         <image wx:if="{{ showDefault}}" src="/imges/coin_deafault.png" class="coin_default"></image>
-         <image wx:if="{{ imgsrc }}" src="{{imgsrc}}" class="coin_reverse"></image>
-         <view wx:if="{{answer}}" class="anser" id="answer">{{answer}}</view>
+         <view class="item">
+         
+         </view>
+         <view class="selector">
+            <view class="top">
+                取值范围:
+                <view><input type="numer" maxlength="3" data-id="rank1" placeholder="1" bindblur="bindKeyInput"></input></view>
+                至
+                <view><input type="numer" maxlength="3" data-id="rank2"  placeholder="10" bindblur="bindKeyInput"></input></view>
+            </view>
+            <view class="bottom">
+                生成个数:
+                <view><input type="numer" maxlength="2" data-id="rank3"  placeholder="3" bindblur="bindKeyInput"></input></view>
+            </view>
+         </view>
+
+         <view class="tips">最大范围 0-100     最多生成 10 个数</view>
       </view>
       <view class="c_btn" bindtap="clickbtn">
       {{game.start}}

@@ -152,7 +152,9 @@ Page({
             }
         ], 5000, () => {
             var arr = this.data.turnplatelist;
-            arr[random]['status'] = 'checked';
+        
+            arr[random]['status'] = 'checked_' + turnlength;
+    
             this.setData({
                 turnplatelist: arr
             })
@@ -167,6 +169,10 @@ Page({
 
     },
     selectTurn(e) {
+
+        if (this.data.pending) {
+            return;
+        }
 
         var self = this;
         var index = e.currentTarget.dataset.id;
@@ -214,6 +220,9 @@ Page({
 
     },
     editurn() {
+        if (this.data.pending) {
+            return;
+        }
         var self = this;
         var temp = self.data.templist
         var turnlength = self.data.turnlength

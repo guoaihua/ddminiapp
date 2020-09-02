@@ -1,5 +1,6 @@
 // pages/coin/coin.js
 const App = getApp();
+const {vibrateLong, vibrateShort} = require("../../utils/util");
 
 Page({
 
@@ -33,6 +34,7 @@ Page({
     onLoad: function (options) {
         const self = this;
         console.log(App.globalData.navHeight);
+
         this.setData({
               navH: App.globalData.navHeight
             })
@@ -47,7 +49,8 @@ Page({
 
 
         //下载音频
-        this.audioctx = wx.createAudioContext('myAudio');
+        this.audioctx = App.globalData.config.useVoice && wx.createAudioContext('myAudio');
+
         // 预先下载2张gif
        self.loader = this.selectComponent("#imgloader");
        let gifsrc = self.data.gifsrc;
@@ -117,7 +120,7 @@ Page({
 
         // 点击成功时，给一个短震动
 
-        wx.vibrateShort();
+        vibrateShort();
 
         // 生成随机数
         const self = this;
@@ -141,7 +144,7 @@ Page({
             lastanswer: answer
         });
      
-         this.audioctx.play();
+        this.audioctx && this.audioctx.play();
 
         // 用完之后删除，加载下一个新的
         self.data.gifpools[answer] = null;
@@ -160,7 +163,7 @@ Page({
                 answer: answer === 'right'? '正': '反',
                 pending: false
             });
-            wx.vibrateLong();
+            vibrateLong();
         },1500)
     }
 })

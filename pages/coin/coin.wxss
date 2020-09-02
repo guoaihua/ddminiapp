@@ -133,9 +133,9 @@ color: #FFFFFF;
 
 
 .showanimate {
-  animation: showanswer ease-in-out 0.3s forwards;
+  animation: showanswer cubic-bezier(.02,1.04,.69,1.2) 0.3s forwards;
 }
 
 .disable {
-  opacity: 0.8;
+  opacity: 0.5;
 }
