@@ -1,6 +1,5 @@
 // pages/dice/dice.js
 const App = getApp();
-const {vibrateLong, vibrateShort} = require("../../utils/util");
 
 Page({
 
@@ -10,7 +9,7 @@ Page({
     data: {
         game: {
             name: "叮咚决策器",
-            tips: "点击骰子或按钮开始掷骰子",
+            tips: "点击按钮开始掷骰子",
             start: "掷骰子"
         },
         showDefault: true,
@@ -29,9 +28,10 @@ Page({
      */
     onLoad: function (options) {
         const self = this;
-        console.log(self);
+        console.log(App.globalData.config);
         this.setData({
-              navH: App.globalData.navHeight
+              navH: App.globalData.navHeight,
+              config: App.globalData.config
             })
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
@@ -121,13 +121,19 @@ Page({
             dicnum: dic
         })
     },
+    vibrateLong(){
+        this.data.config.useShake && wx.vibrateLong();
+     },
+     vibrateShort() {
+        this.data.config.useShake && wx.vibrateShort();
+     },
     clickbtn(e){
     
         if(this.data.pending){
             return;
         }
 
-        vibrateShort();
+       this.vibrateShort();
 
         var self = this;
         this.setData({
@@ -149,7 +155,7 @@ Page({
             this.setData({
                 dicnum: arr
             });
-            vibrateLong();
+           this.vibrateLong();
         },2300)
 
         setTimeout(()=>{

@@ -14,7 +14,19 @@ Page({
         rank1: 1,
         rank2: 10,
         rank3: 3,
-        ranklist: ['?','?','?'],
+        ranklist: [
+            {
+                content:  '?',
+                style: ''
+            },
+            {
+                content:  '?',
+                style: ''
+            },
+            {
+                content:  '?',
+                style: ''
+            }],
         pending: false
     },
 
@@ -89,7 +101,14 @@ Page({
         var name = e.currentTarget.dataset.id;
 
         if(name === 'rank3'){
-            var ranklist = new Array(+e.detail.value).fill('?');
+            var animation = 'animation: opacity 0.3s ease-in-out;';
+        
+            var ranklist = new Array(+e.detail.value).fill({
+                content: "?",
+                style: animation
+            });
+       
+
             this.setData({
                 ranklist:ranklist
             })
@@ -105,14 +124,42 @@ Page({
           var start = this.data.rank1;
           var end = this.data.rank2;
           var arr = this.data.ranklist;
-         console.log(arr);
+        
+
+         // 为了先显示？ ,后面一个个显示答案，
+         setTimeout(()=>{
+             for(let i = 0 ; i < arr.length; i++){
+                 setTimeout(()=>{
+                    var animation = `animation: showanswer cubic-bezier(.02,1.04,.69,1.2) 0.3s forwards`;
+                    arr[i] = {
+                        content: this.getRandomArbitrary(start,end),
+                        style: animation
+                    }
+                    this.setData({
+                        ranklist:arr
+                    })
+                    if(i === arr.length - 1){
+                        this.setData({
+                            pending: false
+                        })
+                    }
+                 },i*300)
+             }
+         },300)
+
          arr.forEach((item,index)=>{
-            arr[index] = this.getRandomArbitrary(start,end);
-         });
+                var animation = 'animation: opacity 0.3s ease-in-out;';
+                arr[index] = {
+                    content: '?',
+                    style: animation
+                }
+             });
 
          this.setData({
-             ranklist:arr
-         })
+                 ranklist:arr,
+                 pending: true
+             })
+    
 
       },
      getRandomArbitrary:function(min, max) {

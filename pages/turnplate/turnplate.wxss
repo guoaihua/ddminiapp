@@ -66,9 +66,32 @@ opacity: 0.8;
   border-radius: 100%;
   position: absolute;
   overflow: hidden;
+}
+
+.c_animation .turn_bg {
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 100%;
+  position: absolute;
   box-shadow: 0px 20px 40px rgba(30, 79, 61, 0.1);
 }
 
+.turn_scale {
+  animation: showturn  0.3s cubic-bezier(.02,1.04,.69,1.2);
+}
+
+@keyframes showturn {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
 
 
 .c_animation .turn_default::after {
@@ -486,6 +509,7 @@ white-space: nowrap;
   top: 41%;
   left: 50%;
   transform: translate(-50%,-50%);
+  z-index: 999;
 }
 .c_animation .anser {
   width: 70px;
@@ -522,7 +546,7 @@ color: #FFFFFF;
 
 .c_btn {
   margin-top: 10%;
-  padding: 13px 92px;
+  padding: 17px 92px 18px;
   background: #00C67E;
 box-shadow: 0px 10px 20px rgba(255, 182, 73, 0.2);
 border-radius: 83px;
@@ -535,7 +559,7 @@ line-height: 29px;
 color: #FFFFFF;
 }
 
-.c_animation .checked_3,.c_animation .checked_4,.c_animation .checked_5 {
+.c_animation .checked_4,.c_animation .checked_5 {
   animation: showchecked 2s ease-in-out;
 }
 
@@ -552,6 +576,33 @@ color: #FFFFFF;
     z-index: 99;
   }
 }
+
+
+.c_animation .checked_3 {
+  animation: checked3 2s ease-in-out;
+  z-index: 99;
+}
+.turns_3>.checked_3.turn_1::before{
+  background: #DFF3FC;
+  z-index: -9;
+}
+
+
+@keyframes checked3 {
+  0%{
+    background-color: #00D387;
+    z-index: 99;
+  }
+  50% {
+    background-color: #D0E4EF;
+  }
+  100% {
+    background-color: #00D387;
+    z-index: 99;
+  }
+}
+
+
 .c_animation .checked_5 {
   animation: checked5 2s ease-in-out;
 }
@@ -605,6 +656,7 @@ color: #FFFFFF;
   line-height: 35px;
   text-align: center;
   margin-right: 3%;
+  cursor: pointer;
 }
 
 .c_edit>image {
@@ -681,4 +733,8 @@ line-height: 24px;
 
 .c_modal .modal-container .footer view:first-child {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.disable {
+  opacity: 0.5;
 }

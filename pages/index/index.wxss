@@ -55,7 +55,6 @@ letter-spacing: -0.3px;
 opacity: 0.8;
 color: #2A2D32;
 margin-bottom: 5.76%;
-margin-top: 0.86%;
 }
 
 .list {
@@ -88,7 +87,6 @@ margin-top: 0.86%;
   font-weight: normal;
   font-size: 24px;
   font-family: "zihun144";
-  margin-bottom: 2%;
 }
 
 .gamelist .itemtips {

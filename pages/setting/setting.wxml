@@ -36,7 +36,9 @@
                 </view>
                 <view class="lists">
                     <view wx:for="{{checkboxItems}}" bindtap="setSports" data-index="{{index}}">
-                      <view class="btn_circ {{item.checked && 'checked'}}"></view>
+                      <view class="btn_circ {{item.checked && 'checked'}}">
+                         <image src="/imges/setting/correct.svg"></image>
+                      </view>
                       {{item.name}}
                     </view>
                 </view>

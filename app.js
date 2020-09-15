@@ -19,7 +19,15 @@ App({
     })  
 
     // 从缓存中取出配置
-    this.globalData.config = wx.getStorageSync('config')
+    try {
+
+      var config = wx.getStorageSync('config');
+      if(config){
+        this.globalData.config = config;
+      }
+    }catch(e){
+    }
+   
     
 
   },

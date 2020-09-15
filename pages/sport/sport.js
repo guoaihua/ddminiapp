@@ -12,9 +12,12 @@ Page({
             tips: "纠结今天运不运动？点击按钮帮你做决定",
             start: "今天运动吗",
             sport: '运动',
-            rest: '休息'
+            rest: '休息',
+            result_sport: '今天运动一下吧',
+            result_rest: '今天就休息一下吧'
         },
-        animate: ''
+        animate: '',
+        disable: false
     },
 
     /**
@@ -22,7 +25,7 @@ Page({
      */
     onLoad: function (options) {
         const self = this;
-        console.log(self);
+    
         this.setData({
               navH: App.globalData.navHeight
             })
@@ -34,8 +37,41 @@ Page({
         ],300,function(){
 
         }.bind(this))
+        
+        try{
+           var sport =  wx.getStorageSync('usesport');
+           if(sport){
+              var time = new Date(sport.time);
+              var now = new Date();
+              var isSameDay = this.isSameDay(time, now);
+              if(isSameDay){
+                // 上一次缓存是同一天说明今天已经选择过了
+                console.log(sport);
+                var animate = '';
+                if(sport.sport === 'sport'){
+                    animate = 'showsport'
+                }else {
+                    animate = 'showrest'
+                }
+
+                this.setData({
+                    disable: true,
+                    ["game.start"]: "一天只能选择一次哦",
+                    animate:animate
+                })
+              }
+           }
+        }catch(e){
+
+        }
+
     },
 
+    isSameDay(timeStampA, timeStampB) {
+    let dateA = new Date(timeStampA);
+    let dateB = new Date(timeStampB);
+    return (dateA.setHours(0, 0, 0, 0) == dateB.setHours(0, 0, 0, 0));
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -85,11 +121,27 @@ Page({
 
     },
     clickbtn(){
-        var random = Math.floor(Math.random()*10);
-        var animate = random < 5 ? 'sport' : 'rest';
+        if(this.data.disable){
+            return;
+        }
+        var config = App.globalData.config;
+        var rate = config.sportRatio || '6:5';
+        var rate1 = +rate.split(":")[0];
+        var rate2 = +rate.split(":")[1];
+
+        var random = Math.floor(Math.random()*(rate1 + rate2));
+        console.log(rate1, rate2, random);
+        var animate = random < rate1 ? 'sport' : 'rest';
         this.setData({
-            animate: animate
+            animate: animate,
+            ["game.start"]: "一天只能选择一次哦",
+            disable: true
         });
         
+        // 设置缓存
+        wx.setStorageSync('usesport', {
+            time: Date.now(),
+            sport: animate
+        } );
     }
 })

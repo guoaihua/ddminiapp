@@ -9,15 +9,17 @@
       </view>
       <view class="c_animation {{animate}}">
          <view class="left">
+            <view>{{game.result_sport}}</view>
             <image src="/imges/sport/sport.png"></image>
             <view> {{game.sport}}</view>
          </view>
          <view class="right">
+         <view>{{game.result_rest}}</view>
                  <image src="/imges/sport/rest.png"></image>
             <view> {{game.rest}}</view>
          </view>
       </view>
-      <view class="c_btn" bindtap="clickbtn">
+      <view class="c_btn {{disable ? 'disable' : '' }}" bindtap="clickbtn">
       {{game.start}}
       </view>
     </view>

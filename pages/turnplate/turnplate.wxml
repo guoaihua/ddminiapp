@@ -8,15 +8,16 @@
         <view class="gametips">{{game.tips}}</view>
       </view>
       <view class="c_animation">
-          <view class="turn_default turns_{{turnplatelist.length}}">
+          <view class="turn_default {{anima_scale}} turns_{{turnplatelist.length}}">
             <view class="turn_{{item.id+1}} {{item.status}}" wx:for="{{turnplatelist}}">
                 <text>{{item.name}}</text>
             </view>
           </view>
+          <view class="turn_bg {{anima_scale}}"></view>
          <image  src="/imges/turnplate/turn-pointer.png" class="turn_pointer"></image>
          <view wx:if="{{answer}}" class="anser" id="answer">{{answer}}</view>
       </view>
-      <view class="c_btn" bindtap="clickbtn">
+      <view class="c_btn {{pending ? 'disable' : '' }}" bindtap="clickbtn">
       {{game.start}}
       </view>
       <view class="c_edit">

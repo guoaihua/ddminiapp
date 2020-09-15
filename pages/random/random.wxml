@@ -8,8 +8,8 @@
         <view class="gametips">{{game.tips}}</view>
       </view>
       <view class="dices">
-        <view wx:for="{{ranklist}}" class="dice dice-{{ranklist.length>=8?'small': ''}}">
-          {{item}}
+        <view wx:for="{{ranklist}}" style="{{item.style}}" class="dice showanimate  dice-{{ranklist.length>=8?'small': ''}}">
+          {{item.content}}
         </view>
       </view>
       <view class="c_animation">
@@ -19,7 +19,7 @@
          <view class="selector">
             <view class="top">
                 取值范围:
-                <view><input type="numer" maxlength="3" data-id="rank1" placeholder="1" bindblur="bindKeyInput"></input></view>
+                <view><input type="numer" maxlength="3" data-id="rank1" placeholder="1" bindblur="bindKeyInput" ></input></view>
                 至
                 <view><input type="numer" maxlength="3" data-id="rank2"  placeholder="10" bindblur="bindKeyInput"></input></view>
             </view>
@@ -31,7 +31,7 @@
 
          <view class="tips">最大范围 0-100     最多生成 10 个数</view>
       </view>
-      <view class="c_btn" bindtap="clickbtn">
+      <view class="c_btn {{pending ? 'disable' : '' }}" bindtap="clickbtn">
       {{game.start}}
       </view>
     </view>

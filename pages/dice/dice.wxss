@@ -195,7 +195,7 @@ opacity: 0.8;
 
 
 .c_btn {
-  padding: 18px 92px;
+  padding: 17px 92px 18px;
   background: #04A4FE;
   box-shadow: 0px 10px 20px rgba(4, 164, 254, 0.2);
 border-radius: 83px;

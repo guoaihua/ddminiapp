@@ -1,6 +1,5 @@
 // pages/coin/coin.js
 const App = getApp();
-const {vibrateLong, vibrateShort} = require("../../utils/util");
 
 Page({
 
@@ -10,7 +9,7 @@ Page({
     data: {
         game: {
             name: "叮咚决策器",
-            tips: "点击硬币或按钮开始抛硬币",
+            tips: "点击按钮开始抛硬币",
             start: "抛硬币"
         },
         answer: "",
@@ -36,7 +35,8 @@ Page({
         console.log(App.globalData.navHeight);
 
         this.setData({
-              navH: App.globalData.navHeight
+              navH: App.globalData.navHeight,
+              config: App.globalData.config
             })
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
@@ -113,6 +113,12 @@ Page({
     onShareAppMessage: function () {
 
     },
+    vibrateLong(){
+       this.data.config.useShake && wx.vibrateLong();
+    },
+    vibrateShort() {
+       this.data.config.useShake && wx.vibrateShort();
+    },
     clickbtn(){
         if(this.data.pending){
             return;
@@ -120,7 +126,7 @@ Page({
 
         // 点击成功时，给一个短震动
 
-        vibrateShort();
+        this.vibrateShort();
 
         // 生成随机数
         const self = this;
@@ -163,7 +169,7 @@ Page({
                 answer: answer === 'right'? '正': '反',
                 pending: false
             });
-            vibrateLong();
+            self.vibrateLong();
         },1500)
     }
 })

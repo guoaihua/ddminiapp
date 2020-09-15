@@ -27,7 +27,5 @@ const vibrateLong = n => {
 
 
 module.exports = {
-  formatTime: formatTime,
-  vibrateShort,
-  vibrateLong
+  formatTime: formatTime
 }

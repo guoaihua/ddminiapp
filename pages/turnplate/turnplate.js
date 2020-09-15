@@ -15,13 +15,13 @@ Page({
         turnsrc: '/imges/turnplate/turn1.png',
         turnplatelist: [{
             id: 0,
-            name: '周杰伦'
+            name: '转盘1'
         }, {
             id: 1,
-            name: '林俊杰'
+            name: '转盘2'
         }, {
             id: 2,
-            name: '陈小春'
+            name: '转盘3'
         }],
         templist: [],
         templist2: [],
@@ -44,7 +44,8 @@ Page({
             }
         ],
         showModal: false,
-        turnlength: 3
+        turnlength: 3,
+        anima_scale: ''
     },
 
     /**
@@ -121,19 +122,22 @@ Page({
     onShareAppMessage: function () {
 
     },
+    clearAnimate:function(){
+        this.clearAnimation(".turn_default")
+    },
     clickbtn() {
         if (this.data.pending) {
             return;
         }
         var self = this;
-
+        this.clearAnimate();
         this.clearAnimation('.turn_default')
         
-        console.log(this.data.turnplatelist);
+    
         var turnlength = this.data.turnlength
         // 根据turnlength 确认转盘个数
         var base = 360 / turnlength; //间隔
-        var random = Math.round(Math.random() * turnlength); // 0 - length-1
+        var random = Math.floor(Math.random() * turnlength); // 0 - length-1
 
         var targetRotate = base * random + base / 2; // 间隔的角度
 
@@ -174,16 +178,41 @@ Page({
             return;
         }
 
+        // 清楚样式
+        this.clearAnimate();
+
         var self = this;
         var index = e.currentTarget.dataset.id;
-
         var editlist = self.data.editlist;
+
+        var turnplatelist = [];
 
         if (editlist[index]['class'] === 'active') {
             return;
         }
         //设置转盘
-        self.setTurn(editlist[index]['id']);
+        var setTurn = self.setTurn(editlist[index]['id']);
+        if(!setTurn){
+            // 不存在缓存设置失败，自定义轮盘
+            for(var i = 0; i < editlist[index]['id'];i++){
+                turnplatelist.push({
+                    id: i,
+                    name: '转盘' + (i +1) 
+                })
+            }
+            this.setData({
+                turnplatelist:turnplatelist
+            })
+        }
+
+        this.setData({
+            anima_scale: 'turn_scale'
+        });
+        setTimeout(()=>{
+            this.setData({
+                anima_scale: ''
+            });  
+        },500)
 
         editlist.forEach((item, i) => {
             if (index === i) {
@@ -209,15 +238,18 @@ Page({
                 this.setData({
                     turnplatelist: locallist
                 })
+                return true
             }
+            return false;
           } catch (e) {
             // Do something when catch error
+            return false;
           }
 
     },
 
     getTurn(index){
-
+    
     },
     editurn() {
         if (this.data.pending) {

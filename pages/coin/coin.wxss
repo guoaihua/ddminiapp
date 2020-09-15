@@ -53,11 +53,9 @@ opacity: 0.8;
 }
 
 .c_animation .coin_default{
-  width: 100px;
-  height: 69px;
-  margin-top: 81.72%;
+  width: 76.38%;
+  height: 100%;  
   position: absolute;
-  bottom: 5.6%;
   left: 50%;
 transform: translateX(-50%);
 }
@@ -101,7 +99,7 @@ color: #FFFFFF;
 
 .c_btn {
   margin-top: 10%;
-  padding: 18px 92px;
+  padding: 17px 92px 18px;
   background: #FFA319;
 box-shadow: 0px 10px 20px rgba(255, 182, 73, 0.2);
 border-radius: 83px;
@@ -133,7 +131,7 @@ color: #FFFFFF;
 
 
 .showanimate {
-  animation: showanswer cubic-bezier(.02,1.04,.69,1.2) 0.3s forwards;
+  animation: showanswer  0.3s forwards;
 }
 
 .disable {

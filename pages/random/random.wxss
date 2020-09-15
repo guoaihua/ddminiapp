@@ -53,7 +53,7 @@ justify-content: space-around;
   
 
   .c_btn {
-    padding: 18px 92px;
+    padding: 17px 92px 18px;
     background: #D458FF;
     box-shadow: 0px 10px 20px rgba(212, 88, 255, 0.2);
     border-radius: 100px;
@@ -121,7 +121,7 @@ text-align: center;
   .dices {
     display: flex;
     justify-content:center;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
   }
 
   .dice {
@@ -137,7 +137,9 @@ text-align: center;
     position: relative;
     margin-right: 2%;
     margin-bottom: 5%;
-    animation: opacity 0.3s ease-in-out;
+
+    z-index: 99;
+    
   }
 
   .dice::after {
@@ -154,9 +156,28 @@ text-align: center;
     bottom: -10px;
   }
 
+
+  @keyframes showanswer {
+    0%{
+      opacity: 0;
+      transform: scale(0,0) rotate(-45deg) ;
+      
+    }
+    100% {
+      transform: scale(1,1) rotate(0);
+      opacity: 1;
+
+    }
+  }
+
+  .showanimate {
+    transform-origin: 0% 102%;
+  }
+
   .dice-small {
     width: 60px;
     height: 60px;
+    line-height: 50px;
   }
 
   @keyframes opacity {
@@ -166,4 +187,8 @@ text-align: center;
     100% {
       opacity: 1;
     }
+  }
+
+  .disable {
+    opacity: 0.5;
   }

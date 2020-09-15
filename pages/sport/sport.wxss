@@ -116,63 +116,74 @@ color: #FFFFFF;
 bottom: 16%;
 }
 
+.right>view:nth-child(1), .left>view:nth-child(1) {
+    position: absolute;
+    font-family: Source Han Sans CN;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    top: 10%;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.3px;
+    
+    color: #FFFFFF;
+
+    opacity: 0;
+    z-index: 99;
+}
+
 .c_animation.sport .left {
-    animation: left 5s  forwards;
+    animation: flicker 0.5s 5  forwards,left 0.5s 2.5s forwards;
 }
 
 .c_animation.sport .right {
-    animation: right 5s  forwards;
+    animation: flicker 0.5s 5 0.25s forwards,right 0.5s 2.5s forwards;
 }
 .c_animation.rest .left {
-    animation: right 5s forwards;
+    animation: flicker 0.5s 5 0.25s forwards,right 0.5s 2.5s forwards;
 }
 
 .c_animation.rest .right {
-    animation: left 5s  forwards;
+    animation: flicker 0.5s 5  forwards,left 0.5s 2.5s forwards;
 }
 
+.showsport .left{
+    animation: left 0.3s forwards
+}
+
+.c_animation.sport .left>view:nth-child(1),.showsport .left>view:nth-child(1) {
+    opacity: 0.8;
+}
+.showsport .right{
+    animation: right 0.3s forwards
+}
+
+.showrest .left{
+    animation: right 0.3s forwards
+}
+.showrest .right{
+    animation: left 0.3s forwards
+}
+
+.c_animation.rest .right>view:nth-child(1),.showrest .right>view:nth-child(1) {
+    opacity: 0.8;
+}
+
+@keyframes flicker {
+    0%{
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 @keyframes left{
-    0% {
-        opacity: 0.5;
-        width: 46.15%;
-    }
-
-    10% {
-        opacity: 1;
-        width: 46.15%;
-    }
-
-    20% {
-        opacity: 0.5;
-        width: 46.15%;
-    }
-
-    30% {
-        opacity: 1;
-        width: 46.15%;
-    }
-    40% {
-        opacity: 0.5;
-        width: 46.15%;
-    }
-
-    50% {
-        opacity: 1;
-        width: 46.15%;
-    }
-    60% {
-        opacity: 0.5;
-        width: 46.15%;
-    }
-    70% {
-        opacity: 1;
-        width: 46.15%;
-    }
-    85% {
-        opacity: 0.5;
-        width: 46.15%;
-    }
     100% {
         opacity: 1;
         width: 100%;
@@ -180,58 +191,14 @@ bottom: 16%;
 }
 
 @keyframes right{
-    0% {
-        opacity: 1;
-        display: block;
-        width: 46.15%;
-    }
-
-    10% {
-        opacity: 0.5;
-        display: block;
-        width: 46.15%;
-    }
-
-    20% {
-        opacity: 1;
-        display: block;
-        width: 46.15%;
-    }
-
-    30% {
-        opacity: 0.5;
-        display: block;
-        width: 46.15%;
-    }
-    40% {
-        opacity: 1;
-        display: block;
-        width: 46.15%;
-    }
-
-    50% {
-        opacity: 0.5;
-        display: block;
-        width: 46.15%;
-    }
-    60% {
-        opacity: 1;
-        display: block;
-        width: 46.15%;
-    }
-    70% {
-        opacity: 0.5;
-        display: block;
-        width: 46.15%;
-    }
-    85% {
-        opacity: 0;
-        display: block;
-        width: 46.15%;
-    }
     100% {
         width: 0;
         opacity: 0;
         display: none!important;
     }
 }
+
+.disable {
+    opacity: 0.5;
+    padding: 18px 43px;
+  }
