@@ -45,7 +45,8 @@ Page({
         ],
         showModal: false,
         turnlength: 3,
-        anima_scale: ''
+        anima_scale: '',
+        turnaudio: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/turn.mp3?sign=497ada0be8bb98dedc2adca2bed2aa7a'
     },
 
     /**
@@ -72,6 +73,8 @@ Page({
         }.bind(this));
 
         this.setTurn(this.data.turnlength);
+        this.actx_turn = wx.createInnerAudioContext();
+        this.actx_turn.src = this.data.turnaudio;
     },
 
     /**
@@ -145,7 +148,11 @@ Page({
 
         this.setData({
             pending: true
-        })
+        });
+
+        
+        this.actx_turn.play();
+
         this.animate('.turn_default', [{
                 rotate: 0,
                 ease: 'ease-in-out'
@@ -266,7 +273,7 @@ Page({
             })
 
         }
-        console.log(temp);
+
         self.setData({
             showModal: true,
             templist: temp,
@@ -283,7 +290,7 @@ Page({
     confirm() {
 
         var temp = this.data.templist2;
-        console.log(temp);
+    
 
         // 将数据缓存到本地
 
@@ -301,7 +308,7 @@ Page({
         })
     },
     bindKeyInput(e) {
-        console.log(e)
+    
         var value = e.detail.value;
         var id = e.currentTarget.dataset.id;
         var temp = this.data.templist2;

@@ -1,16 +1,17 @@
 <!--index.wxml-->
-<header></header>
+<header  id="header" ></header> 
+<image src="/imges/header.png" class="header" id="headerbg"></image>
 <view class="container">
   <view class="menu">
       <view class="title">
-        <view class="name">叮咚决策器</view>
+        <view class="name"><image src="/imges/title/title_dd.svg"></image></view>
         <view class="tips">不要纠结啦，帮你做决定!</view>
-        <image src="/imges/setting.png" bindtap="gotoDetail" data-url="../setting/setting"></image>
+        <image src="/imges/setting.svg" class="setting" bindtap="gotoDetail" data-url="../setting/setting"></image>
       </view>
       <view class="list">
           <view wx:for="{{gamelist}}" class="gamelist {{item.classname}}" bindtap="gotoDetail" data-url="{{item.url}}">
               <image src="{{item.imgsrc}}"></image>
-              <view class="itemname"> {{item.name}}</view>
+              <view class="itemname"> <image src="{{item.title_svg}}"></image></view>
               <view class="itemtips"> {{item.tips}}</view>
           </view>
       </view>

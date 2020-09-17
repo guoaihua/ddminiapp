@@ -390,7 +390,7 @@ white-space: nowrap;
 .turns_5 .turn_5 text {
   top: 50%;
   left: 9%;
-  transform: rotate(43deg) skew(0deg);
+  transform: rotate(43deg) skew(-3deg);
 }
 
 

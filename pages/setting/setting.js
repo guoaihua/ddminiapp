@@ -22,8 +22,8 @@ Page({
         },
         checkboxItems: [
             {name: '5:5', checked: false},
-            {name: '6:5',  checked: true},
-            {name: '7:5', checked: false}
+            {name: '6:4',  checked: true},
+            {name: '7:3', checked: false}
         ],
     },
 

@@ -17,7 +17,8 @@ Page({
             result_rest: '今天就休息一下吧'
         },
         animate: '',
-        disable: false
+        disable: false,
+        sportVoice: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/sport.mp3?sign=ffb9dd4ba191e11b12f095b236e9354a'
     },
 
     /**
@@ -64,6 +65,9 @@ Page({
         }catch(e){
 
         }
+
+        self.actx = wx.createInnerAudioContext();
+        self.actx.src = this.data.sportVoice;
 
     },
 
@@ -130,8 +134,9 @@ Page({
         var rate2 = +rate.split(":")[1];
 
         var random = Math.floor(Math.random()*(rate1 + rate2));
-        console.log(rate1, rate2, random);
+
         var animate = random < rate1 ? 'sport' : 'rest';
+        this.actx.play();
         this.setData({
             animate: animate,
             ["game.start"]: "一天只能选择一次哦",

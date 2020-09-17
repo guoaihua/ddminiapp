@@ -27,7 +27,8 @@ Page({
                 content:  '?',
                 style: ''
             }],
-        pending: false
+        pending: false,
+        result: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/result.mp3?sign=4c507dd5092f036f79a96801325730ac&'
     },
 
     /**
@@ -101,6 +102,10 @@ Page({
         var name = e.currentTarget.dataset.id;
 
         if(name === 'rank3'){
+            if(e.detail.value>10 || e.detail.value<1){
+                console.log("超出范围");
+                return ;
+            }
             var animation = 'animation: opacity 0.3s ease-in-out;';
         
             var ranklist = new Array(+e.detail.value).fill({
@@ -112,12 +117,18 @@ Page({
             this.setData({
                 ranklist:ranklist
             })
+        }else{
+            if(e.detail.value<0 || e.detail.value>100){
+                    return;
+            }
         }
+
         this.setData({
             [name]: +e.detail.value
         })
       },
       clickbtn:function(){
+          var self = this;
         if(this.data.pending){
             return;
         }
@@ -129,12 +140,18 @@ Page({
          // 为了先显示？ ,后面一个个显示答案，
          setTimeout(()=>{
              for(let i = 0 ; i < arr.length; i++){
+                
                  setTimeout(()=>{
+                    const iac = wx.createInnerAudioContext();
+                    iac.src = self.data.result;
+              iac.play();
+
                     var animation = `animation: showanswer cubic-bezier(.02,1.04,.69,1.2) 0.3s forwards`;
                     arr[i] = {
                         content: this.getRandomArbitrary(start,end),
                         style: animation
                     }
+                    
                     this.setData({
                         ranklist:arr
                     })

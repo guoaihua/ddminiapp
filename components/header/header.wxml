@@ -1,2 +1,2 @@
   <image src="/imges/bg.png" class="bg"></image>
-  <image src="/imges/header.png" class="header" wx:if="{{showHeaderbg}}" id="headerbg"></image>
+

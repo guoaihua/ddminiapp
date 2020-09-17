@@ -34,6 +34,6 @@ App({
   globalData: {
     userInfo: null,
     navHeight: 0,
-    config: {useVoice: true, useShake: true, useCache: true, sportRatio: "6:5"}
+    config: {useVoice: true, useShake: true, useCache: true, sportRatio: "6:4"}
   }
 })

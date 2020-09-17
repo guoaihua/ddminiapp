@@ -110,14 +110,14 @@ Page({
     data: {
         game: {
             name: "叮咚决策器",
-            tips: "纠结今天运不运动？点击按钮帮你做决定",
-            start: "今天吃什么",
-            sport: '运动',
-            rest: '休息'
+            tips: "纠结今天吃啥？点击按钮给你出出主意",
+            start: "今天吃什么"
         },
         result: '麻辣香锅',
         status: 'start',
-        pending: false
+        pending: false,
+        voiceSrc: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/eatting.mp3?sign=1479c281e551033d5baa68a72283828b',
+        result: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/result.mp3?sign=4c507dd5092f036f79a96801325730ac&'
     },
 
     /**
@@ -137,6 +137,12 @@ Page({
         ],300,function(){
 
         }.bind(this))
+
+        self.actx = wx.createInnerAudioContext();
+        self.actx.src = this.data.voiceSrc;
+
+        self.actx_result = wx.createInnerAudioContext();
+        self.actx_result.src = this.data.result;
     },
 
     /**
@@ -188,6 +194,7 @@ Page({
 
     },
     clickbtn(){
+        var self = this;
         if(this.data.pending){
             return;
         }
@@ -196,13 +203,15 @@ Page({
             pending: true,
             ["game.start"]: '换一个'
         });
+        self.actx.play();
         setTimeout(()=>{
             var random = Math.floor(Math.random()*100);
+            self.actx_result.play();
             this.setData({
                 status: 'answer',
                 result: foods[random],
                 pending: false
             });
-        },2500)
+        },2100)
     }
 })

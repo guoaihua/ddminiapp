@@ -20,8 +20,8 @@ page {
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   display: flex;
-flex-direction: column;
-justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;  
 
 }  
 
@@ -53,9 +53,11 @@ justify-content: center;
 
   .c_btn {
     padding: 17px 92px 18px;
-    background: #D458FF;
-    box-shadow: 0px 10px 20px rgba(212, 88, 255, 0.2);
-    border-radius: 100px;
+ 
+    background: #FF574D;
+box-shadow: 0px 10px 20px rgba(255, 101, 91, 0.2);
+border-radius: 100px;
+
   text-align: center;
   font-family: "zihun144";
   font-style: normal;

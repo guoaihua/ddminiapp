@@ -39,7 +39,6 @@ Page({
               config: App.globalData.config
             })
          // showHeaderbg: false
-        this.selectComponent("#header").hideheader();
         this.animate('#cont',[
          {top: "33.5%",ease: 'ease-in-out'},
          {top: "10.5%",ease: 'ease-in-out'}
