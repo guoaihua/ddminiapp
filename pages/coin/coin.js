@@ -62,6 +62,7 @@ Page({
             self.data.gifpools[item] = data.src
          })
        })
+       
     },
 
     /**
@@ -125,14 +126,14 @@ Page({
 
         // 点击成功时，给一个短震动
 
-        this.vibrateShort();
+        this.data.config.useShake &&  this.vibrateShort();
 
         // 生成随机数
         const self = this;
-        var random = Math.random(0,1);
+        var random = Math.round(Math.random(0,1)*10);
 
         var answer = "";
-        answer = random > 0.5 ? "right" : "reverse";
+        answer = random >= 5 ? "right" : "reverse";
         var imgpools = self.data.gifpools;
         if(!imgpools[answer]){
             wx.showToast({
@@ -149,7 +150,7 @@ Page({
             lastanswer: answer
         });
      
-        this.audioctx && this.audioctx.play();
+      this.audioctx && this.audioctx.play();
 
         // 用完之后删除，加载下一个新的
         self.data.gifpools[answer] = null;

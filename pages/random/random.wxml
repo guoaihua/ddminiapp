@@ -20,7 +20,7 @@
             <view class="top">
                 取值范围:
                 <view><input type="numer" maxlength="2" data-id="rank1" placeholder="1" bindblur="bindKeyInput" ></input></view>
-                至
+                -
                 <view><input type="numer" maxlength="3" data-id="rank2"  placeholder="10" bindblur="bindKeyInput"></input></view>
             </view>
             <view class="bottom">

@@ -28,7 +28,8 @@ Page({
         const self = this;
     
         this.setData({
-              navH: App.globalData.navHeight
+              navH: App.globalData.navHeight,
+              config: App.globalData.config
             })
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
@@ -66,8 +67,11 @@ Page({
 
         }
 
-        self.actx = wx.createInnerAudioContext();
-        self.actx.src = this.data.sportVoice;
+        if(App.globalData.config.useVoice) {
+            self.actx = wx.createInnerAudioContext();
+            self.actx.src = this.data.sportVoice;
+        }
+
 
     },
 
@@ -133,10 +137,10 @@ Page({
         var rate1 = +rate.split(":")[0];
         var rate2 = +rate.split(":")[1];
 
-        var random = Math.floor(Math.random()*(rate1 + rate2));
+        var random = Math.round(Math.random()*(rate1 + rate2));
 
         var animate = random < rate1 ? 'sport' : 'rest';
-        this.actx.play();
+        this.actx && this.actx.play();
         this.setData({
             animate: animate,
             ["game.start"]: "一天只能选择一次哦",

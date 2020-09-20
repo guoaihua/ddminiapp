@@ -56,7 +56,8 @@ Page({
         const self = this;
         console.log(self);
         this.setData({
-            navH: App.globalData.navHeight
+            navH: App.globalData.navHeight,
+            config: App.globalData.config
         })
         // showHeaderbg: false
         this.selectComponent("#header").hideheader();
@@ -72,9 +73,25 @@ Page({
 
         }.bind(this));
 
+       for(var i=3; i < 7;i++){
+        if(!this.data.config.useCache){
+             try {
+                 
+                 wx.removeStorageSync(`turn-${i}`)
+             }catch(e){}
+        }
+    }
+
         this.setTurn(this.data.turnlength);
-        this.actx_turn = wx.createInnerAudioContext();
-        this.actx_turn.src = this.data.turnaudio;
+
+        if(App.globalData.config.useVoice){
+            this.actx_turn =  wx.createInnerAudioContext();
+            this.actx_turn.src = this.data.turnaudio;
+        }
+
+
+
+    
     },
 
     /**
@@ -144,21 +161,20 @@ Page({
 
         var targetRotate = base * random + base / 2; // 间隔的角度
 
-        console.log(random, targetRotate);
 
         this.setData({
             pending: true
         });
 
         
-        this.actx_turn.play();
+        this.actx_turn && this.actx_turn.play();
 
         this.animate('.turn_default', [{
                 rotate: 0,
                 ease: 'ease-in-out'
             },
             {
-                rotate: 360 * 10 + targetRotate,
+                rotate: 360 * 11 + targetRotate,
                 ease: 'ease-in-out'
             }
         ], 5000, () => {

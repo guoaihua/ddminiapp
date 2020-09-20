@@ -14,7 +14,7 @@ page {
   height: 90%;
   padding: 0px 8.5%;
   position: absolute;
-  top: 9.5%;
+  top: "33.5%";
   background-color: #ffffff;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
@@ -149,7 +149,7 @@ bottom: 16%;
 }
 
 .showsport .left{
-    animation: left 0.3s forwards
+    animation: left 0s forwards
 }
 
 .showsport .left>view:nth-child(1) {
@@ -158,14 +158,14 @@ bottom: 16%;
 
 
 .showsport .right{
-    animation: right 0.3s forwards
+    animation: right 0s forwards
 }
 
 .showrest .left{
-    animation: right 0.3s forwards
+    animation: right 0s forwards
 }
 .showrest .right{
-    animation: left 0.3s forwards
+    animation: left 0s forwards
 }
 
 .c_animation.rest .right>view:nth-child(1),.c_animation.sport .left>view:nth-child(1){

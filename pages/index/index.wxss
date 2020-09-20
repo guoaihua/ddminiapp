@@ -41,6 +41,10 @@ transform: translateY(-50%);
 z-index: 99;
 }
 
+.menu .title .setting:hover {
+  opacity: 0.5;
+}
+
 .menu .title .name {
   font-style: normal;
 font-weight: normal;

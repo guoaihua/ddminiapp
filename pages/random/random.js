@@ -28,7 +28,7 @@ Page({
                 style: ''
             }],
         pending: false,
-        result: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/result.mp3?sign=4c507dd5092f036f79a96801325730ac&'
+        result: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/result.mp3?sign=39649a7924659a4c92fcea75b4df875e'
     },
 
     /**
@@ -38,7 +38,8 @@ Page({
         const self = this;
         console.log(self);
         this.setData({
-              navH: App.globalData.navHeight
+              navH: App.globalData.navHeight,
+              config: App.globalData.config
             })
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
@@ -142,9 +143,12 @@ Page({
              for(let i = 0 ; i < arr.length; i++){
                 
                  setTimeout(()=>{
-                    const iac = wx.createInnerAudioContext();
-                    iac.src = self.data.result;
-              iac.play();
+                     if(App.globalData.config.useVoice){
+                        const iac = wx.createInnerAudioContext();
+                        iac.src = self.data.result;
+                  iac.play();
+                     }
+             
 
                     var animation = `animation: showanswer cubic-bezier(.02,1.04,.69,1.2) 0.3s forwards`;
                     arr[i] = {

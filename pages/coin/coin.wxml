@@ -12,8 +12,8 @@
          <image wx:if="{{ imgsrc }}" src="{{imgsrc}}" class="coin_reverse"></image>
          <view wx:if="{{answer}}" class="anser {{animation}}" id="answer">{{answer}}</view>
       </view>
-      <view class="c_btn" bindtap="clickbtn">
-       <text class="{{pending ? 'disable' : '' }}">{{game.start}}</text>
+      <view class="c_btn {{pending ? 'disable' : '' }}" bindtap="clickbtn">
+       <text >{{game.start}}</text>
       </view>
     </view>
 </view>

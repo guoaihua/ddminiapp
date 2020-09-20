@@ -110,14 +110,14 @@ Page({
     data: {
         game: {
             name: "叮咚决策器",
-            tips: "纠结今天吃啥？点击按钮给你出出主意",
+            tips: "不知道今天吃啥？点击按钮给你出出主意",
             start: "今天吃什么"
         },
         result: '麻辣香锅',
         status: 'start',
         pending: false,
         voiceSrc: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/eatting.mp3?sign=1479c281e551033d5baa68a72283828b',
-        result: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/result.mp3?sign=4c507dd5092f036f79a96801325730ac&'
+        result: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/result.mp3?sign=39649a7924659a4c92fcea75b4df875e'
     },
 
     /**
@@ -127,7 +127,8 @@ Page({
         const self = this;
         console.log(self);
         this.setData({
-              navH: App.globalData.navHeight
+              navH: App.globalData.navHeight,
+              config: App.globalData.config
             })
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
@@ -138,11 +139,14 @@ Page({
 
         }.bind(this))
 
-        self.actx = wx.createInnerAudioContext();
-        self.actx.src = this.data.voiceSrc;
-
-        self.actx_result = wx.createInnerAudioContext();
-        self.actx_result.src = this.data.result;
+         if(App.globalData.config.useVoice){
+            self.actx = wx.createInnerAudioContext();
+            self.actx.src = this.data.voiceSrc;
+    
+            self.actx_result = wx.createInnerAudioContext();
+            self.actx_result.src = this.data.result;
+         }
+  
     },
 
     /**
@@ -203,10 +207,10 @@ Page({
             pending: true,
             ["game.start"]: '换一个'
         });
-        self.actx.play();
+        self.actx && self.actx.play();
         setTimeout(()=>{
             var random = Math.floor(Math.random()*100);
-            self.actx_result.play();
+            self.actx_result && self.actx_result.play();
             this.setData({
                 status: 'answer',
                 result: foods[random],

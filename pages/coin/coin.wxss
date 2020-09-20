@@ -11,10 +11,11 @@ page {
   
 .cont {
   width: 83%;
-  height: 83%;
-  padding: 39px 8.5% 200px;
+  height: 90%;
+  padding: 0px 8.5%;
+  
   position: absolute;
-  top: 9.5%;
+  top: "33.5%";
   background-color: #ffffff;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
@@ -51,7 +52,7 @@ opacity: 0.8;
 
 .c_animation {
   text-align: center;
-  height: 66.3%;
+  height: 42.3%;
   position: relative;
 }
 
@@ -101,7 +102,6 @@ color: #FFFFFF;
 
 
 .c_btn {
-  margin-top: 10%;
   padding: 17px 92px 18px;
   background: #FFA319;
 box-shadow: 0px 10px 20px rgba(255, 182, 73, 0.2);
