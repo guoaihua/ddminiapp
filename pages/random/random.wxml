@@ -19,13 +19,13 @@
          <view class="selector">
             <view class="top">
                 取值范围:
-                <view><input type="numer" maxlength="2" data-id="rank1" placeholder="1" bindblur="bindKeyInput" ></input></view>
+                <view><input type="number" maxlength="2" data-id="rank1" placeholder="1" bindblur="bindKeyInput" ></input></view>
                 -
-                <view><input type="numer" maxlength="3" data-id="rank2"  placeholder="10" bindblur="bindKeyInput"></input></view>
+                <view><input type="number" maxlength="3" data-id="rank2"  placeholder="10" bindblur="bindKeyInput"></input></view>
             </view>
             <view class="bottom">
                 生成个数:
-                <view><input type="numer" maxlength="2" data-id="rank3"  placeholder="3" bindblur="bindKeyInput"></input></view>
+                <view><input type="number" maxlength="2" data-id="rank3"  placeholder="3" bindblur="bindKeyInput"></input></view>
             </view>
          </view>
 

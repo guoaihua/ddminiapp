@@ -640,7 +640,7 @@ color: #FFFFFF;
 
 .c_edit {
   display: flex;
-  margin-top: 10%;
+  margin-top: 6%;
   justify-content: center;
 }
 

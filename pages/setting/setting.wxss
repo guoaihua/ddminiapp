@@ -12,7 +12,7 @@ page {
         height: 83%;
         padding: 39px 8.5% 200px;
         position: absolute;
-        top: "33.5%";
+        top: 33.5%;
         background-color: #ffffff;
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
@@ -97,7 +97,7 @@ box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
 }
 
 .off.btnOuter .btnInner {
-    animation: off 0.3s ease-in-out forwards;
+    animation: off 0.1s ease-in-out forwards;
 }
 
 @keyframes off {
@@ -110,7 +110,7 @@ box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
 }
 
 .on.btnOuter .btnInner {
-    animation: on 0.3s ease-in-out forwards;
+    animation: on 0.1s ease-in-out forwards;
 }
 
 @keyframes on {

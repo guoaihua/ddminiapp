@@ -119,7 +119,7 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
-
+       this.actx_turn && this.actx_turn.stop();
     },
 
     /**
@@ -142,6 +142,12 @@ Page({
     onShareAppMessage: function () {
 
     },
+    vibrateLong(){
+        this.data.config.useShake && wx.vibrateLong();
+     },
+     vibrateShort() {
+        this.data.config.useShake && wx.vibrateShort();
+     },
     clearAnimate:function(){
         this.clearAnimation(".turn_default")
     },
@@ -158,7 +164,7 @@ Page({
         // 根据turnlength 确认转盘个数
         var base = 360 / turnlength; //间隔
         var random = Math.floor(Math.random() * turnlength); // 0 - length-1
-
+    
         var targetRotate = base * random + base / 2; // 间隔的角度
 
 
@@ -166,7 +172,7 @@ Page({
             pending: true
         });
 
-        
+        this.vibrateShort();
         this.actx_turn && this.actx_turn.play();
 
         this.animate('.turn_default', [{
@@ -177,7 +183,7 @@ Page({
                 rotate: 360 * 11 + targetRotate,
                 ease: 'ease-in-out'
             }
-        ], 5000, () => {
+        ], 5200, () => {
             var arr = this.data.turnplatelist;
         
             arr[random]['status'] = 'checked_' + turnlength;
@@ -191,10 +197,12 @@ Page({
                     turnplatelist: arr,
                     pending: false
                 })
+                this.vibrateShort();
             }, 2000)
         });
 
     },
+
     selectTurn(e) {
 
         if (this.data.pending) {

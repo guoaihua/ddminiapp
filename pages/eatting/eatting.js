@@ -197,11 +197,18 @@ Page({
     onShareAppMessage: function () {
 
     },
+    vibrateLong(){
+        this.data.config.useShake && wx.vibrateLong();
+     },
+     vibrateShort() {
+        this.data.config.useShake && wx.vibrateShort();
+     },
     clickbtn(){
         var self = this;
         if(this.data.pending){
             return;
         }
+        this.vibrateShort();
         this.setData({
             status: 'ques',
             pending: true,
@@ -211,6 +218,7 @@ Page({
         setTimeout(()=>{
             var random = Math.floor(Math.random()*100);
             self.actx_result && self.actx_result.play();
+            this.vibrateLong();
             this.setData({
                 status: 'answer',
                 result: foods[random],

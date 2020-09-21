@@ -99,6 +99,9 @@ Page({
     onShareAppMessage: function () {
 
     },
+    vibrateShort() {
+        this.data.config.useShake && wx.vibrateShort();
+     },
     bindKeyInput: function (e) {
         var name = e.currentTarget.dataset.id;
 
@@ -137,7 +140,29 @@ Page({
           var end = this.data.rank2;
           var arr = this.data.ranklist;
         
+          var temp = [];
+        // 判断是否超出范围
 
+        if(start >= end){
+            wx.showToast({
+                title: '起始数必须小于终止数',
+                icon: 'none',
+                duration: 2000
+              })
+              return;
+        }
+        if((end - start + 1) < this.data.rank3){
+            console.log(end - start + 1,  this.data.rank3);
+            wx.showToast({
+              title: '随机数超出范围',
+              icon: 'none',
+              duration: 2000
+            })
+            return;
+        }
+
+
+          this.vibrateShort();
          // 为了先显示？ ,后面一个个显示答案，
          setTimeout(()=>{
              for(let i = 0 ; i < arr.length; i++){
@@ -152,7 +177,7 @@ Page({
 
                     var animation = `animation: showanswer cubic-bezier(.02,1.04,.69,1.2) 0.3s forwards`;
                     arr[i] = {
-                        content: this.getRandomArbitrary(start,end),
+                        content: this.getUniqueNumber(temp,start,end),
                         style: animation
                     }
                     
@@ -183,7 +208,15 @@ Page({
     
 
       },
+      getUniqueNumber(arr,min,max){
+            var random =  this.getRandomArbitrary(min,max);
+            while(arr.indexOf(random) > -1){
+                random = this.getRandomArbitrary(min,max);
+            }
+            arr.push(random);
+            return random;
+      },
      getRandomArbitrary:function(min, max) {
-        return Math.floor(Math.random() * (max - min) + min);
+        return Math.floor(Math.random() * (max - min+1) + min);
       }
 })

@@ -128,18 +128,27 @@ Page({
     onShareAppMessage: function () {
 
     },
+    vibrateShort() {
+        this.data.config.useShake && wx.vibrateShort();
+     },
+     vibrateLong(){
+        this.data.config.useShake && wx.vibrateLong();
+     },
     clickbtn(){
         if(this.data.disable){
             return;
         }
+        
         var config = App.globalData.config;
         var rate = config.sportRatio || '6:5';
         var rate1 = +rate.split(":")[0];
         var rate2 = +rate.split(":")[1];
 
-        var random = Math.round(Math.random()*(rate1 + rate2));
+        var random = Math.floor(Math.random()*(rate1 + rate2));
 
         var animate = random < rate1 ? 'sport' : 'rest';
+
+        this.vibrateShort();
         this.actx && this.actx.play();
         this.setData({
             animate: animate,
@@ -147,6 +156,9 @@ Page({
             disable: true
         });
         
+        setTimeout(()=>{
+            this.vibrateLong();
+        },3000)
         // 设置缓存
         wx.setStorageSync('usesport', {
             time: Date.now(),

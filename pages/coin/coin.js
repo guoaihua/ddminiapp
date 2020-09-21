@@ -16,10 +16,10 @@ Page({
         imgsrc: "",
         showDefault: true,
         gifsrc:{
-            reverse: "https://7a69-ziming-sslvb-1302777190.tcb.qcloud.la/static/coin_reverse.gif?sign=2054a14fe83095c723d2b6fda9d4a42f",
-            right: "https://7a69-ziming-sslvb-1302777190.tcb.qcloud.la/static/coin_right.gif?sign=dbc9b8d5e8c1e2932ca2e4775d660964"
+            reverse: "https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin_reverse.gif?sign=deebf9f7565949d64ff765bc1ff972aa&t=1600701453",
+            right: "https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin_right.gif?sign=93d1d341aceaed8f6b54d27409562dd8&t=1600701397"
         },
-        coinsrc: 'https://7a69-ziming-sslvb-1302777190.tcb.qcloud.la/static/coin.mp3?sign=ee2c2e669b1a375777f6a3c9d80f8f49',
+        coinsrc: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin.mp3?sign=c661749d7e41cb10bad23eebced05dda&t=1600702447',
         gifpools: {
 
         },
@@ -130,7 +130,7 @@ Page({
 
         // 生成随机数
         const self = this;
-        var random = Math.round(Math.random(0,1)*10);
+        var random = Math.floor(Math.random(0,1)*10);
 
         var answer = "";
         answer = random >= 5 ? "right" : "reverse";

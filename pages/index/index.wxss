@@ -41,7 +41,7 @@ transform: translateY(-50%);
 z-index: 99;
 }
 
-.menu .title .setting:hover {
+.hoverStatus {
   opacity: 0.5;
 }
 
@@ -68,6 +68,7 @@ letter-spacing: -0.3px;
 opacity: 0.8;
 color: #2A2D32;
 margin-bottom: 5.76%;
+margin-top: -8px;
 }
 
 .list {
@@ -92,7 +93,7 @@ margin-bottom: 5.76%;
 
 .gamelist .itemname {
   position: absolute;
-  bottom: 32px;
+  bottom: 28px;
   width: 100%;
   text-align: center;
   color: #FFFFFF;

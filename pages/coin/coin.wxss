@@ -15,7 +15,7 @@ page {
   padding: 0px 8.5%;
   
   position: absolute;
-  top: "33.5%";
+  top: 33.5%;
   background-color: #ffffff;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
@@ -57,7 +57,7 @@ opacity: 0.8;
 }
 
 .c_animation .coin_default{
-  width: 76.38%;
+  width: 66.38%;
   height: 100%;  
   position: absolute;
   left: 50%;
@@ -65,7 +65,7 @@ transform: translateX(-50%);
 }
 
 .c_animation .coin_reverse {
-  width: 76.38%;
+  width: 66.38%;
   height: 100%;
 }
 
@@ -75,7 +75,7 @@ transform: translateX(-50%);
   background: #FFA723;
   border-radius: 12px;
   position: absolute;
-  bottom: 50%;
+  bottom: 80%;
   left: 39%;
   font-family: "zihun144";
 font-style: normal;

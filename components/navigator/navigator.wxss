@@ -5,5 +5,16 @@
     width: 32px;
     height: 32px;
     z-index: 99;
+    opacity: 0;
     -webkit-tap-highlight-color: transparent;
+    animation: opac 0.1s ease-in-out 0.3s forwards;
+}
+
+@keyframes opac {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

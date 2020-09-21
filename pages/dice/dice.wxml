@@ -15,11 +15,13 @@
             <image src="/imges/dice/cup.png" class="{{cup_animation}}"></image>
          </view>
       </view>
+      <view>
       <view class="c_btn {{pending ? 'disable' : '' }}" bindtap="clickbtn">
           <text>{{game.start}}</text>
       </view>
       <view class="setdices">
         <view wx:for="{{setdices}}" class="dice-set {{item}}" data-index="{{index}}" bindtap="diceSelect">{{index+1}}</view>
+      </view>
       </view>
     </view>
 </view>
