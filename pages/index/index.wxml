@@ -4,7 +4,7 @@
 <view class="container">
   <view class="menu">
       <view class="title">
-        <view class="name"><image src="/imges/title/title_dd.svg"></image></view>
+        <view class="name">叮咚决策器</view>
         <view class="tips">不要纠结啦，帮你做决定!</view>
         <view hover-class="hoverStatus">
            <image src="/imges/setting.svg" class="setting" bindtap="gotoDetail" data-url="../setting/setting"></image>
@@ -14,7 +14,7 @@
       <view class="list">
           <view wx:for="{{gamelist}}" hover-class="hoverStatus" class="gamelist {{item.classname}}" bindtap="gotoDetail" data-url="{{item.url}}">
               <image src="{{item.imgsrc}}"></image>
-              <view class="itemname"> <image src="{{item.title_svg}}"></image></view>
+              <view class="itemname">{{item.name}}</view>
               <view class="itemtips"> {{item.tips}}</view>
           </view>
       </view>

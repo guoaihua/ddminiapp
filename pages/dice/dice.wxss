@@ -30,7 +30,7 @@ justify-content: space-around;
   z-index: 100;
 }
 .gamename {
-font-family: "zihun144";
+  font-family: "circle000";
 font-style: normal;
 font-weight: normal;
 font-size: 24px;
@@ -144,6 +144,10 @@ opacity: 0.8;
     opacity: 0.9;
   }
 
+  12.5% {
+    opacity: 1;
+  }
+
 
   25% {
     top: 10%;
@@ -184,6 +188,10 @@ opacity: 0.8;
     opacity: 1;
   }
 
+  90% {
+    opacity: 1;
+  }
+
   95% {
     top: -27%;
     left: 50%;
@@ -204,7 +212,7 @@ opacity: 0.8;
   box-shadow: 0px 10px 20px rgba(4, 164, 254, 0.2);
 border-radius: 83px;
 text-align: center;
-font-family: "zihun144";
+font-family: "circle000";
 font-style: normal;
 font-weight: normal;
 font-size: 24px;
@@ -215,7 +223,7 @@ color: #FFFFFF;
 .setdices {
   text-align: center;
   padding: 10px 0;
-  margin-top: 2%;
+  margin: 2% 0 5%;
 }
 
 .setdices .dice-set {
@@ -224,8 +232,7 @@ color: #FFFFFF;
   width: 40px;
   height: 40px;
   background-color:#04A4FE;
-
-  font-family: "zihun144";
+  font-family: "circle000";
 font-style: normal;
 font-weight: normal;
 font-size: 24px;

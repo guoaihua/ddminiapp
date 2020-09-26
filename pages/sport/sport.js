@@ -48,7 +48,7 @@ Page({
               var isSameDay = this.isSameDay(time, now);
               if(isSameDay){
                 // 上一次缓存是同一天说明今天已经选择过了
-                console.log(sport);
+              
                 var animate = '';
                 if(sport.sport === 'sport'){
                     animate = 'showsport'

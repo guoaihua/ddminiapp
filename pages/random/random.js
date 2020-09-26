@@ -108,21 +108,31 @@ Page({
         if(name === 'rank3'){
             if(e.detail.value>10 || e.detail.value<1){
                 console.log("超出范围");
+                wx.showToast({
+                    title: '请按提示填写数字',
+                    icon: 'none',
+                    duration: 2000
+                  })
                 return ;
             }
             var animation = 'animation: opacity 0.3s ease-in-out;';
-        
+
             var ranklist = new Array(+e.detail.value).fill({
                 content: "?",
                 style: animation
             });
-       
+
 
             this.setData({
                 ranklist:ranklist
             })
         }else{
             if(e.detail.value<0 || e.detail.value>100){
+                wx.showToast({
+                    title: '请按提示填写数字',
+                    icon: 'none',
+                    duration: 2000
+                  })
                     return;
             }
         }
@@ -139,13 +149,13 @@ Page({
           var start = this.data.rank1;
           var end = this.data.rank2;
           var arr = this.data.ranklist;
-        
+
           var temp = [];
         // 判断是否超出范围
 
         if(start >= end){
             wx.showToast({
-                title: '起始数必须小于终止数',
+                title: '请按提示填写数字',
                 icon: 'none',
                 duration: 2000
               })
@@ -154,7 +164,7 @@ Page({
         if((end - start + 1) < this.data.rank3){
             console.log(end - start + 1,  this.data.rank3);
             wx.showToast({
-              title: '随机数超出范围',
+              title: '请按提示填写数字',
               icon: 'none',
               duration: 2000
             })
@@ -166,21 +176,21 @@ Page({
          // 为了先显示？ ,后面一个个显示答案，
          setTimeout(()=>{
              for(let i = 0 ; i < arr.length; i++){
-                
+
                  setTimeout(()=>{
                      if(App.globalData.config.useVoice){
                         const iac = wx.createInnerAudioContext();
                         iac.src = self.data.result;
-                  iac.play();
+                        iac.play();
                      }
-             
 
-                    var animation = `animation: showanswer cubic-bezier(.02,1.04,.69,1.2) 0.3s forwards`;
+
+                    var animation = `animation: showanswer cubic-bezier(0,.77,.67,1.43) 0.3s forwards`;
                     arr[i] = {
                         content: this.getUniqueNumber(temp,start,end),
                         style: animation
                     }
-                    
+
                     this.setData({
                         ranklist:arr
                     })
@@ -205,7 +215,7 @@ Page({
                  ranklist:arr,
                  pending: true
              })
-    
+
 
       },
       getUniqueNumber(arr,min,max){

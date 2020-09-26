@@ -1,6 +1,6 @@
 <navigator class="navigator" navH="{{navH}}"></navigator>
-<header showHeaderbg="{{true}}" id="header" ></header> 
-<imgLoader id="imgloader"></imgLoader> 
+<header showHeaderbg="{{true}}" id="header" ></header>
+<imgLoader id="imgloader"></imgLoader>
 <view class="container">
     <view class="cont" id="cont">
       <view class="c_title">

@@ -55,7 +55,6 @@ Page({
  
         var items = this.data.checkboxItems
         items.forEach((item,index)=>{
-            console.log(item.name, config.sportRatio);
             if(item.name === config.sportRatio){
                 item.checked = true
             }else {
@@ -128,7 +127,7 @@ Page({
     });
     // 同时将数据实时更新到全局
     App.globalData.config = data;
-    console.log( App.globalData.config);
+   
     },
 
     /**
@@ -168,7 +167,6 @@ Page({
         this.save();
     },
     setSports(e){
-        console.log(e);
         var cur = e.currentTarget.dataset.index;
         var checkboxItems = this.data.checkboxItems;
 

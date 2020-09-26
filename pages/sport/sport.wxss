@@ -8,7 +8,7 @@ page {
     background: #F8D7A2;
     overflow: hidden;
   }
-  
+
 .cont {
   width: 83%;
   height: 90%;
@@ -21,22 +21,22 @@ page {
   display: flex;
 flex-direction: column;
 justify-content: space-around;
-}  
+}
 
 .c_title {
     text-align: center;
   }
   .gamename {
-  font-family: "zihun144";
+    font-family: "circle000";
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
   line-height: 29px;
   text-align: center;
   color: #2A2D32;
-  margin-bottom: 3%;
-  }
-  
+    margin-bottom: 3%;
+    }
+
   .gametips {
     font-family: Source Han Sans CN;
   font-style: normal;
@@ -47,7 +47,7 @@ justify-content: space-around;
   color: #2A2D32;
   opacity: 0.8;
   }
-  
+
 
   .c_btn {
     padding: 18px 92px;
@@ -55,7 +55,7 @@ justify-content: space-around;
     box-shadow: 0px 10px 20px rgba(212, 88, 255, 0.2);
     border-radius: 100px;
   text-align: center;
-  font-family: "zihun144";
+  font-family: "circle000";
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -109,7 +109,7 @@ justify-content: center;
     font-size: 36px;
 line-height: 43px;
 text-align: center;
-font-family: "zihun144";
+font-family: "circle000";
 
 color: #FFFFFF;
 bottom: 16%;
@@ -126,7 +126,7 @@ bottom: 16%;
     align-items: center;
     text-align: center;
     letter-spacing: -0.3px;
-    
+
     color: #FFFFFF;
 
     opacity: 0;
@@ -134,7 +134,7 @@ bottom: 16%;
 }
 
 .c_animation.sport .left {
-    animation: flicker 0.5s 5  forwards,left 0.5s 2.5s forwards;
+    animation: flicker 0.5s 5  forwards,left 0.5s 2.5s forwards cubic-bezier(0,.77,.67,1.43);
 }
 
 .c_animation.sport .right {
@@ -145,7 +145,7 @@ bottom: 16%;
 }
 
 .c_animation.rest .right {
-    animation: flicker 0.5s 5  forwards,left 0.5s 2.5s forwards;
+    animation: flicker 0.5s 5  forwards,left 0.5s 2.5s forwards cubic-bezier(0,.77,.67,1.43);
 }
 
 .showsport .left{

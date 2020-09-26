@@ -54,7 +54,7 @@ Page({
      */
     onLoad: function (options) {
         const self = this;
-        console.log(self);
+      
         this.setData({
             navH: App.globalData.navHeight,
             config: App.globalData.config
@@ -191,13 +191,13 @@ Page({
             this.setData({
                 turnplatelist: arr
             })
+            this.vibrateLong();
             setTimeout(() => {
                 arr[random]['status'] = '';
                 this.setData({
                     turnplatelist: arr,
                     pending: false
                 })
-                this.vibrateShort();
             }, 2000)
         });
 
@@ -236,14 +236,20 @@ Page({
             })
         }
 
-        this.setData({
-            anima_scale: 'turn_scale'
+        this.animate('.turn_default',[
+            {scale: [1,1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'},
+            {scale: [1.1,1.1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'},
+            {scale: [1,1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'}
+        ],300,()=>{
+            this.clearAnimation(".turn_default");
         });
-        setTimeout(()=>{
-            this.setData({
-                anima_scale: ''
-            });  
-        },500)
+        this.animate('.turn_bg',[
+            {scale: [1,1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'},
+            {scale: [1.1,1.1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'},
+            {scale: [1,1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'}
+        ],300,()=>{
+            this.clearAnimation(".turn_bg");
+        })
 
         editlist.forEach((item, i) => {
             if (index === i) {
@@ -264,7 +270,7 @@ Page({
         //点击切换时，先从缓存拉取数据
         try {
             var locallist = wx.getStorageSync('turn-'+ index);
-            console.log(locallist);
+           
             if(locallist){
                 this.setData({
                     turnplatelist: locallist

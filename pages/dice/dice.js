@@ -28,7 +28,7 @@ Page({
      */
     onLoad: function (options) {
         const self = this;
-        console.log(App.globalData.config);
+    
         this.setData({
               navH: App.globalData.navHeight,
               config: App.globalData.config
@@ -43,8 +43,11 @@ Page({
         }.bind(this))
 
              //下载音频
-       this.audioctx = App.globalData.config.useVoice && wx.createAudioContext('myAudio');
+      
 
+       self.audioctx = wx.createInnerAudioContext();
+       self.audioctx.src = this.data.dicesrc;
+       
     },
 
     /**

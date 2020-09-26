@@ -15,11 +15,11 @@ Page({
         answer: "",
         imgsrc: "",
         showDefault: true,
-        gifsrc:{
-            reverse: "https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin_reverse.gif?sign=deebf9f7565949d64ff765bc1ff972aa&t=1600701453",
-            right: "https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin_right.gif?sign=93d1d341aceaed8f6b54d27409562dd8&t=1600701397"
+        localgif: {
+            reverse: "/imges/coin/coin_reverse.gif",
+            right: "/imges/coin/coin_right.gif"
         },
-        coinsrc: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin.mp3?sign=c661749d7e41cb10bad23eebced05dda&t=1600702447',
+        coinsrc: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin.mp3?sign=c661749d7e41cb10bad23eebced05dda',
         gifpools: {
 
         },
@@ -32,7 +32,6 @@ Page({
      */
     onLoad: function (options) {
         const self = this;
-        console.log(App.globalData.navHeight);
 
         this.setData({
               navH: App.globalData.navHeight,
@@ -48,21 +47,9 @@ Page({
 
 
         //下载音频
-        this.audioctx = App.globalData.config.useVoice && wx.createAudioContext('myAudio');
 
-        // 预先下载2张gif
-       self.loader = this.selectComponent("#imgloader");
-       let gifsrc = self.data.gifsrc;
-       Object.keys(gifsrc).forEach((item,index)=>{
-         self.loader.load(gifsrc[item] +"&t="+ new Date().getTime(),(err,data)=>{
-            if(err){
-                console.log(err);
-                return;
-            }
-            self.data.gifpools[item] = data.src
-         })
-       })
-       
+        self.audioctx = wx.createInnerAudioContext();
+        self.audioctx.src = this.data.coinsrc;
     },
 
     /**
@@ -134,34 +121,17 @@ Page({
 
         var answer = "";
         answer = random >= 5 ? "right" : "reverse";
-        var imgpools = self.data.gifpools;
-        if(!imgpools[answer]){
-            wx.showToast({
-              title: '糟糕，网络错误，请再试一次'
-            })
-            return;
-        }
         // 将状态设置为pending，防止重复点击
         this.setData({
             pending: true,
             showDefault: false,
             answer: '',
-            imgsrc: imgpools[answer],
+            imgsrc: this.data.localgif[answer] + "?t=" + new Date().getTime(),
             lastanswer: answer
         });
-     
+
       this.audioctx && this.audioctx.play();
 
-        // 用完之后删除，加载下一个新的
-        self.data.gifpools[answer] = null;
-
-        self.loader.load(self.data.gifsrc[answer] +"&t="+ new Date().getTime(),(err,data)=>{
-            if(err){
-                console.log(err);
-                return;
-            }
-            self.data.gifpools[answer] = data.src
-        })
 
         setTimeout(function(){
             self.setData({

@@ -1,6 +1,6 @@
 <navigator class="navigator" navH="{{navH}}"></navigator>
-<header showHeaderbg="{{true}}" id="header" ></header> 
-<imgLoader id="imgloader"></imgLoader> 
+<header showHeaderbg="{{true}}" id="header" ></header>
+<imgLoader id="imgloader"></imgLoader>
 <view class="container">
     <view class="cont" id="cont">
       <view class="c_title">
@@ -14,7 +14,7 @@
       </view>
       <view class="c_animation">
          <view class="item">
-         
+
          </view>
          <view class="selector">
             <view class="top">
@@ -29,7 +29,7 @@
             </view>
          </view>
 
-         <view class="tips">最大范围 0-100     最多生成 10 个数</view>
+         <view class="tips">最大范围 0-100　最多生成 10 个数</view>
       </view>
       <view class="c_btn {{pending ? 'disable' : '' }}" bindtap="clickbtn">
       {{game.start}}

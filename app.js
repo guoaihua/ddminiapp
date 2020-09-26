@@ -1,14 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
-    wx.loadFontFace({
-      family: 'zihun144',
-      global: true,
-      source: 'url("https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/zihun.ttf?sign=61b47d64ca8725996f134c3705f6ab32&t=1600702016")',
-      success: function(res){
-        console.log(res);
-      }
-    })  
+
     wx.getSystemInfo({
       success: res => {
         //导航高度

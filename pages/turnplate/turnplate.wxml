@@ -1,6 +1,6 @@
 <navigator class="navigator" navH="{{navH}}"></navigator>
-<header showHeaderbg="{{true}}" id="header" ></header> 
-<imgLoader id="imgloader"></imgLoader> 
+<header showHeaderbg="{{true}}" id="header" ></header>
+<imgLoader id="imgloader"></imgLoader>
 <view class="container">
     <view class="cont" id="cont">
       <view class="c_title">
@@ -8,12 +8,12 @@
         <view class="gametips">{{game.tips}}</view>
       </view>
       <view class="c_animation">
-          <view class="turn_default {{anima_scale}} turns_{{turnplatelist.length}}">
+          <view class="turn_default  {{anima_scale}} turns_{{turnplatelist.length}}">
             <view class="turn_{{item.id+1}} {{item.status}}" wx:for="{{turnplatelist}}">
                 <text>{{item.name}}</text>
             </view>
           </view>
-          <view class="turn_bg {{anima_scale}}"></view>
+          <view class="turn_bg  {{anima_scale}}"></view>
          <image  src="/imges/turnplate/turn-pointer.png" class="turn_pointer"></image>
          <view wx:if="{{answer}}" class="anser" id="answer">{{answer}}</view>
       </view>
@@ -24,17 +24,17 @@
         </view>
         <view class="c_edit">
             <view wx:for="{{editlist}}" class="{{item.class}}" data-id="{{index}}" bindtap="selectTurn">
-              {{item.id}} 
+              {{item.id}}
             </view>
             <image src="/imges/turnplate/edit.png" bindtap="editurn"></image>
         </view>
-      </view> 
+      </view>
     </view>
 </view>
 <view class="c_modal" wx:if="{{showModal}}">
   <view class="bg" bindtap="cancel"></view>
   <view class="modal-container">
-      <view class="title">转盘命名</view>
+      <view class="title">给转盘每个区间命名</view>
       <view class="inputs">
             <input wx:for="{{templist}}" type="text" placeholder="{{item.name}}"  bindinput="bindKeyInput" data-id="{{item.id}}"> </input>
       </view>

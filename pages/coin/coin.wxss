@@ -8,12 +8,12 @@ page {
     background: #F8D7A2;
     overflow: hidden;
   }
-  
+
 .cont {
   width: 83%;
   height: 90%;
   padding: 0px 8.5%;
-  
+
   position: absolute;
   top: 33.5%;
   background-color: #ffffff;
@@ -22,13 +22,13 @@ page {
   display: flex;
 flex-direction: column;
 justify-content: space-around;
-}  
+}
 
 .c_title {
   text-align: center;
 }
 .gamename {
-font-family: "zihun144";
+  font-family: "circle000";
 font-style: normal;
 font-weight: normal;
 font-size: 24px;
@@ -52,21 +52,24 @@ opacity: 0.8;
 
 .c_animation {
   text-align: center;
-  height: 42.3%;
+  padding-bottom: 120%;
   position: relative;
 }
 
 .c_animation .coin_default{
-  width: 66.38%;
-  height: 100%;  
+  width: 80.38%;
+  height: 100%;
   position: absolute;
   left: 50%;
 transform: translateX(-50%);
 }
 
 .c_animation .coin_reverse {
-  width: 66.38%;
+  width: 80.38%;
   height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .c_animation .anser {
@@ -77,7 +80,7 @@ transform: translateX(-50%);
   position: absolute;
   bottom: 80%;
   left: 39%;
-  font-family: "zihun144";
+  font-family: "circle000";
 font-style: normal;
 font-weight: normal;
 font-size: 36px;
@@ -89,14 +92,14 @@ color: #FFFFFF;
 
 .anser::before {
   content: "";
+  background-color: #FFA723;
   position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 8px solid #FFA723;
-  bottom: -7px;
-  left: 29px;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  border-radius: 3px;
+  bottom: -5px;
+  left: 27px;
 }
 
 
@@ -107,12 +110,13 @@ color: #FFFFFF;
 box-shadow: 0px 10px 20px rgba(255, 182, 73, 0.2);
 border-radius: 83px;
 text-align: center;
-font-family: "zihun144";
+font-family: "circle000";
 font-style: normal;
 font-weight: normal;
 font-size: 24px;
 line-height: 24px;
 color: #FFFFFF;
+margin-top: -10%;
 }
 
 .c_btn:focus {
@@ -134,7 +138,7 @@ color: #FFFFFF;
 
 
 .showanimate {
-  animation: showanswer  0.3s forwards;
+  animation: showanswer  0.3s forwards cubic-bezier(0,.77,.67,1.43);
 }
 
 .disable {

@@ -42,7 +42,7 @@ page {
 
 .nomal-setting .title,.turn-setting .title, .sport-setting .title{
     font-size: 20px;
-    font-family: "zihun144";
+    font-family: "circle000";
     color: #2A2D32;
     margin-bottom: 20px;
 }      
@@ -132,6 +132,9 @@ justify-content: space-between;
 opacity: 0.6;
 }
 
+.sport-setting {
+    margin-bottom: 0px;
+}
 
 .footer {
     display: flex;
@@ -169,6 +172,10 @@ letter-spacing: -0.3px;
     margin-right: 10px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+}
+.btn_circ>image {
+    width: 16px;
+    height: 24px;
 }
 
 

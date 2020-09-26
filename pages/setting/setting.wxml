@@ -20,7 +20,7 @@
             </view>
             </view>
             <view class="turn-setting">
-                <view class="title">「大转盘」设置</view> 
+                <view class="title">大转盘 设置</view> 
             <view class="turn" bindtap="toggle" data-type="turn">
                     <view class="name">转盘文字缓存</view>
                     <view class="btnOuter {{turn.status}}">
@@ -29,7 +29,7 @@
             </view>
             </view>
             <view class="sport-setting">
-                <view class="title">「今天运动吗」设置</view> 
+                <view class="title">今天运动吗 设置</view> 
                 <view class="sport">
                         <view class="name">运动/休息 选定概率</view>
                         <view class="tips">生命在于运动</view>
