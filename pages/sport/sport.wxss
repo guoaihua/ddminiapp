@@ -138,10 +138,10 @@ bottom: 16%;
 }
 
 .c_animation.sport .right {
-    animation: flicker 0.5s 5 0.25s forwards,right 0.5s 2.5s forwards;
+    animation: flicker 0.5s 5 0.25s forwards,right 0.1s 2.5s forwards;
 }
 .c_animation.rest .left {
-    animation: flicker 0.5s 5 0.25s forwards,right 0.5s 2.5s forwards;
+    animation: flicker 0.5s 5 0.25s forwards,right 0.1s 2.5s forwards;
 }
 
 .c_animation.rest .right {

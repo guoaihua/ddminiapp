@@ -144,3 +144,262 @@ margin-top: -10%;
 .disable {
   opacity: 0.5;
 }
+
+
+.test {
+    width: 80.38%;
+    height: 100%;
+    background-size: 6000% 100%;
+    background-repeat: no-repeat;
+    animation-name: keyframes-coin;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: steps(1);
+}
+
+@keyframes keyframes-coin {
+    0% {
+        width: 80.38%;
+        height: 100%;
+        background-size: 6000% 100%;
+    }
+
+    1.67% {
+        background-position: 1.694915254237288% 0%;
+    }
+
+    3.33% {
+        background-position: 3.389830508474576% 0%;
+    }
+
+    5.00% {
+        background-position: 5.084745762711865% 0%;
+    }
+
+    6.67% {
+        background-position: 6.779661016949152% 0%;
+    }
+
+    8.33% {
+        background-position: 8.47457627118644% 0%;
+    }
+
+    10.00% {
+        background-position: 10.16949152542373% 0%;
+    }
+
+    11.67% {
+        background-position: 11.864406779661017% 0%;
+    }
+
+    13.33% {
+        background-position: 13.559322033898304% 0%;
+    }
+
+    15.00% {
+        background-position: 15.254237288135593% 0%;
+    }
+
+    16.67% {
+        background-position: 16.94915254237288% 0%;
+    }
+
+    18.33% {
+        background-position: 18.64406779661017% 0%;
+    }
+
+    20.00% {
+        background-position: 20.33898305084746% 0%;
+    }
+
+    21.67% {
+        background-position: 22.033898305084744% 0%;
+    }
+
+    23.33% {
+        background-position: 23.728813559322035% 0%;
+    }
+
+    25.00% {
+        background-position: 25.423728813559322% 0%;
+    }
+
+    26.67% {
+        background-position: 27.11864406779661% 0%;
+    }
+
+    28.33% {
+        background-position: 28.8135593220339% 0%;
+    }
+
+    30.00% {
+        background-position: 30.508474576271187% 0%;
+    }
+
+    31.67% {
+        background-position: 32.20338983050847% 0%;
+    }
+
+    33.33% {
+        background-position: 33.89830508474576% 0%;
+    }
+
+    35.00% {
+        background-position: 35.59322033898305% 0%;
+    }
+
+    36.67% {
+        background-position: 37.28813559322034% 0%;
+    }
+
+    38.33% {
+        background-position: 38.983050847457626% 0%;
+    }
+
+    40.00% {
+        background-position: 40.67796610169492% 0%;
+    }
+
+    41.67% {
+        background-position: 42.3728813559322% 0%;
+    }
+
+    43.33% {
+        background-position: 44.06779661016949% 0%;
+    }
+
+    45.00% {
+        background-position: 45.76271186440678% 0%;
+    }
+
+    46.67% {
+        background-position: 47.45762711864407% 0%;
+    }
+
+    48.33% {
+        background-position: 49.152542372881356% 0%;
+    }
+
+    50.00% {
+        background-position: 50.847457627118644% 0%;
+    }
+
+    51.67% {
+        background-position: 52.54237288135594% 0%;
+    }
+
+    53.33% {
+        background-position: 54.23728813559322% 0%;
+    }
+
+    55.00% {
+        background-position: 55.932203389830505% 0%;
+    }
+
+    56.67% {
+        background-position: 57.6271186440678% 0%;
+    }
+
+    58.33% {
+        background-position: 59.32203389830508% 0%;
+    }
+
+    60.00% {
+        background-position: 61.016949152542374% 0%;
+    }
+
+    61.67% {
+        background-position: 62.71186440677966% 0%;
+    }
+
+    63.33% {
+        background-position: 64.40677966101694% 0%;
+    }
+
+    65.00% {
+        background-position: 66.10169491525424% 0%;
+    }
+
+    66.67% {
+        background-position: 67.79661016949152% 0%;
+    }
+
+    68.33% {
+        background-position: 69.49152542372882% 0%;
+    }
+
+    70.00% {
+        background-position: 71.1864406779661% 0%;
+    }
+
+    71.67% {
+        background-position: 72.88135593220339% 0%;
+    }
+
+    73.33% {
+        background-position: 74.57627118644068% 0%;
+    }
+
+    75.00% {
+        background-position: 76.27118644067797% 0%;
+    }
+
+    76.67% {
+        background-position: 77.96610169491525% 0%;
+    }
+
+    78.33% {
+        background-position: 79.66101694915254% 0%;
+    }
+
+    80.00% {
+        background-position: 81.35593220338984% 0%;
+    }
+
+    81.67% {
+        background-position: 83.05084745762711% 0%;
+    }
+
+    83.33% {
+        background-position: 84.7457627118644% 0%;
+    }
+
+    85.00% {
+        background-position: 86.4406779661017% 0%;
+    }
+
+    86.67% {
+        background-position: 88.13559322033898% 0%;
+    }
+
+    88.33% {
+        background-position: 89.83050847457628% 0%;
+    }
+
+    90.00% {
+        background-position: 91.52542372881356% 0%;
+    }
+
+    91.67% {
+        background-position: 93.22033898305084% 0%;
+    }
+
+    93.33% {
+        background-position: 94.91525423728814% 0%;
+    }
+
+    95.00% {
+        background-position: 96.61016949152543% 0%;
+    }
+
+    96.67% {
+        background-position: 98.30508474576271% 0%;
+    }
+
+    98.33%,
+    100% {
+        background-position: 100% 0%;
+    }
+}

@@ -238,14 +238,14 @@ Page({
 
         this.animate('.turn_default',[
             {scale: [1,1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'},
-            {scale: [1.1,1.1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'},
+            {scale: [1.05,1.05],ease: 'cubic-bezier(.02,1.04,.69,1.2)'},
             {scale: [1,1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'}
         ],300,()=>{
             this.clearAnimation(".turn_default");
         });
         this.animate('.turn_bg',[
             {scale: [1,1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'},
-            {scale: [1.1,1.1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'},
+            {scale: [1.05,1.05],ease: 'cubic-bezier(.02,1.04,.69,1.2)'},
             {scale: [1,1],ease: 'cubic-bezier(.02,1.04,.69,1.2)'}
         ],300,()=>{
             this.clearAnimation(".turn_bg");

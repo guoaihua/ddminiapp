@@ -15,11 +15,15 @@ Page({
         answer: "",
         imgsrc: "",
         showDefault: true,
-        localgif: {
-            reverse: "/imges/coin/coin_reverse.gif",
-            right: "/imges/coin/coin_right.gif"
+        coin_animation: '',
+        showRight:  false,
+        showReverse: false,
+        gifsrc:{
+            right: "https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin_reverse.png?sign=d847d42107a49b2e4387eb315736cb01&t=1601302492",
+            reverse: "https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin_right.png?sign=99288f983d4642c5108e0f0fb56e9db8&t=1601302527"
         },
         coinsrc: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin.mp3?sign=c661749d7e41cb10bad23eebced05dda',
+        
         gifpools: {
 
         },
@@ -45,9 +49,9 @@ Page({
 
         }.bind(this))
 
-
         //下载音频
 
+        this.videoContext = wx.createVideoContext('myVideo');
         self.audioctx = wx.createInnerAudioContext();
         self.audioctx.src = this.data.coinsrc;
     },
@@ -110,6 +114,10 @@ Page({
         if(this.data.pending){
             return;
         }
+        this.setData({
+            showRight: false,
+            showReverse: false
+        })
 
         // 点击成功时，给一个短震动
 
@@ -120,18 +128,32 @@ Page({
         var random = Math.floor(Math.random(0,1)*10);
 
         var answer = "";
-        answer = random >= 5 ? "right" : "reverse";
+       
+  
+        if(random>=5){
+            answer ="right";
+            this.setData({
+                showRight: false,
+                showReverse: true
+            })
+        }else {
+            answer = "reverse";
+            this.setData({
+                showRight: true,
+                showReverse: false
+            })
+        }
+  
+
         // 将状态设置为pending，防止重复点击
         this.setData({
             pending: true,
             showDefault: false,
             answer: '',
-            imgsrc: this.data.localgif[answer] + "?t=" + new Date().getTime(),
             lastanswer: answer
         });
 
       this.audioctx && this.audioctx.play();
-
 
         setTimeout(function(){
             self.setData({

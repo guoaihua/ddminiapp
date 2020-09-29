@@ -9,7 +9,11 @@
       </view>
       <view class="c_animation">
          <image wx:if="{{ showDefault}}" src="/imges/coin/coin_default.png" class="coin_default"></image>
-         <image wx:if="{{ imgsrc }}" src="{{imgsrc}}" class="coin_reverse"></image>
+
+         <view wx:if="{{ showRight}}" style="  background-image: url({{gifsrc.right}})" class="coin_reverse test"></view>
+
+         <view wx:if="{{ showReverse }}" style="  background-image: url({{gifsrc.reverse}})" class="coin_reverse test"></view>
+
          <view wx:if="{{answer}}" class="anser {{animation}}" id="answer">{{answer}}</view>
       </view>
       <view class="c_btn {{pending ? 'disable' : '' }}" bindtap="clickbtn">
@@ -17,3 +21,5 @@
       </view>
     </view>
 </view>
+
+
