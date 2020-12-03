@@ -51,9 +51,11 @@ Page({
 
         //下载音频
 
-        this.videoContext = wx.createVideoContext('myVideo');
-        self.audioctx = wx.createInnerAudioContext();
-        self.audioctx.src = this.data.coinsrc;
+        if(App.globalData.config.useVoice){
+            this.videoContext = wx.createVideoContext('myVideo');
+            self.audioctx = wx.createInnerAudioContext();
+            self.audioctx.src = this.data.coinsrc;
+        }
     },
 
     /**

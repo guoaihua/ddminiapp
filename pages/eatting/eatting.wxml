@@ -9,15 +9,49 @@
       </view>
       <view class="c_animation">
             <view class="default" wx:if="{{status === 'start'}}">?</view>
+            <view class="middle" wx:elif="{{status === 'middle'}}"></view>
             <view class="ques" wx:elif="{{status === 'ques'}}">
-            <image   src="/imges/eatting/food.gif"></image> </view>
-            <view class="answer" wx:else>
-              <view class="text">{{result}}</view>
+              <image  src="/imges/eatting/food.gif"></image> 
+            </view>
+            <view class="answer" wx:else bindtap="toggleModal" >
+              <image class="focus-left" src="/imges/eatting/arrow.svg"  wx:if="{{!showModal}}"></image>
+              <view class="text"  wx:if="{{!showModal}}">
+                 {{result}}
+              </view>
+              <image class="focus-right" src="/imges/eatting/arrow.svg"  wx:if="{{!showModal}}"></image>
              </view>
             <image class="plate" src="/imges/eatting/eatbg.png"></image>
       </view>
-      <view class="c_btn {{pending ? 'disable' : '' }}" bindtap="clickbtn" >
+
+      <view class="btn_wrap">
+        <view class="c_btn {{pending ? 'disable' : '' }}" bindtap="clickbtn" >
       {{game.start}}
       </view>
+      <view class="sourceSelect" bindtap="sourceSelect">
+        <view class="nearby {{current === 0 ? 'active' : 'disable' }} {{pending ? 'disable' : '' }}" data-id="0">
+          <image src="/imges/eatting/nearby.png"></image>
+          附近美食 </view>
+        <view class="recommend {{current === 1 ? 'active' : 'disable' }} {{pending ? 'disable' : '' }}" data-id="1">
+          <image src="/imges/eatting/random.png"></image> 随机推荐</view>
+      </view>
+      </view>
+ 
     </view>
+</view>
+
+<view class="modal" wx:if="{{showModal}}" bindtap="toggleModal">
+  <view class="answer">
+    <view class="text">{{result}}</view>
+  </view>
+  <view class="location showCard" catchtap="gotoMap" wx:if="{{ (current === 0) && mks}}" hover-class="hoverStatus"> 
+    <image src="/imges/eatting/location.png" ></image>
+  </view>
+  <view class="take-out">
+    <view hover-class="hoverStatus" class="showCard">    
+      <image src="/imges/eatting/eleme.png" catchtap="switchtoEle" hover-class="hoverStatus"></image>
+    </view>
+    <view hover-class="hoverStatus" class="showCard">
+      <image src="/imges/eatting/bty.png" catchtap="switchtoMeit" hover-class="hoverStatus"></image>
+    </view>
+  </view>
 </view>

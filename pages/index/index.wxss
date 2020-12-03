@@ -1,3 +1,7 @@
+.page_container {
+  width: 100%;
+  height: 100%;
+}
 .navigator {
   width: 0;
   height: 0;
@@ -220,4 +224,93 @@ right: 0px;
 .more {
   width: 100%;
   height: 70px;
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+left: 0%;
+top: 0%;
+background: rgba(0, 0, 0, 0.4);
+z-index: 9999;
+}
+
+.card {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 360px;
+  background: #EAEEF3;
+border-radius: 12px;
+padding: 15px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transform-origin: 0 0;
+  animation: showCard 0.3s ease-in-out;
+}
+
+
+.closeModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+}
+.closeModal::after {
+  content: '';
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card .title {
+  color: #2A2D32;
+  font-family: "circle000";
+  font-size: 24px;
+font-style: normal;
+font-weight: normal;
+}
+.card .info {
+  font-family: Source Han Sans CN;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+color: #2A2D32;
+opacity: 0.8;
+}
+
+.card .info {
+  margin: 10px 0;
+}
+
+.updateInfo {
+  width: 357px;
+  height: 195px;
+  position: absolute;
+    bottom: -32px;
+    right: -75px;
+}
+
+@keyframes showCard {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translate(-50%, -50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+
+.fix {
+  position: fixed;
+  overflow: hidden;
 }

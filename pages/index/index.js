@@ -48,7 +48,9 @@ Page({
       }
     ],
     infos1: "更多功能开发中",
-    infos2: "拯救选择困难症和纠结患者"
+    infos2: "拯救选择困难症和纠结患者",
+    showUpdate: false,
+    hidden: 'hidden'
   },
   //事件处理函数
   bindViewTap: function() {
@@ -57,15 +59,39 @@ Page({
     })
   },
   onLoad: function () {
+      // 检查是否第一次进入
+      try {
+        var isFirst =  wx.getStorageSync('isFirst');
+        console.log(isFirst);
+        if(!isFirst){
+            // 第一次进入则推送最近更新内容
+            this.setData({
+              showUpdate: true
+            })
+            wx.setStorage({
+              data: true,
+              key: 'isFirst'
+            })
+        }
+      }catch(e) {
 
+      }
   },
   onHide:function(){
     
 
   },
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function () {
+      return {
+        title: '不要纠结啦，帮你做决定!',
+        imageUrl:'/imges/share.png'
+      }
+    },
   getUserInfo: function(e) {
    
-
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -87,5 +113,11 @@ Page({
         }
       });
     }
-  }
+  },
+  closeModal(){
+    this.setData({
+      showUpdate: false
+    })
+  },
+  clickModal(){}
 })

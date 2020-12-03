@@ -44,10 +44,11 @@ Page({
 
              //下载音频
       
-
-       self.audioctx = wx.createInnerAudioContext();
-       self.audioctx.src = this.data.dicesrc;
-       
+        if(App.globalData.config.useVoice){
+            self.audioctx = wx.createInnerAudioContext();
+            self.audioctx.src = this.data.dicesrc;
+        }
+  
     },
 
     /**
