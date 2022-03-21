@@ -10,10 +10,20 @@
       <view class="packets">
         <image src="/imges/packet.png" class="packet_bg"></image>
         <view>
-          <image bindtap="handleElePacket"  class="ele_packet" src="/imges/packet/ele_packet.png"></image>
-          <image bindtap="handleEleFruits"  class="ele_fruits" src="/imges/packet/ele_fruits.png"></image>
+          <view class="packet_btn">
+          <view hover-class="hoverStatus" bindtap="handleElePacket" class="ele_packet">
+            <image  src="/imges/packet/ele_packet.png"></image>
+          </view>
+          <view hover-class="hoverStatus" bindtap="handleEleFruits" class="ele_fruits">
+            <image  src="/imges/packet/ele_fruits.png"></image>
+          </view > 
         </view>
-        <image  bindtap="handleMtacket" class="mt_packet" src="/imges/packet/mt_packet.png"></image>
+
+        <view  hover-class="hoverStatus" bindtap="handleMtacket" class="mt_packet">
+          <image   src="/imges/packet/mt_packet.png"></image>
+        </view>
+        </view>
+
       </view>
 
     </view>

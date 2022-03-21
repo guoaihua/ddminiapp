@@ -4,6 +4,10 @@ page {
   overflow: hidden;
 }
 
+image {
+  vertical-align: middle;
+}
+
 .container {
   width: 100%;
   height: 100%;
@@ -58,7 +62,7 @@ page {
 
 .toPacket {
   margin-top: 20px;
-    width: 100%;
+    width: 300px;
 }
 
 .toPacket>view {
@@ -66,18 +70,21 @@ page {
 }
 .toPacket>view image {
   position: absolute;
-  width: 90px;
-  height: 90px;
-  top: -18px;
+  width: 70px;
+  height: 70px;
+  top: -9px;
   left: 15px;
 }
 
 .toPacket>view .c_btn {
+  font-weight: 600;
   font-family: 'Source Han Sans CN';
   font-size: 18px;
   background: #FFA319;
   color: #FFFFFF;
-  padding: 17px 0 18px;
+  padding: 0;
+  height: 52px;
+  line-height: 52px;
 }
 
 .c_btn {
@@ -259,7 +266,7 @@ page {
   right: 0%;
   top: 0%;
   bottom: 0%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 999;
   display: flex;
   flex-direction: column;
@@ -294,9 +301,8 @@ page {
 }
 
 .take-out {
-  width: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .take-out>view:nth-child(1) {

@@ -11,6 +11,13 @@ page {
   overflow: hidden;
 }
 
+image {
+  vertical-align: middle;
+}
+
+.hoverStatus {
+  opacity: 0.5;
+}
 .cont {
 width: 83%;
 height: 90%;
@@ -62,20 +69,23 @@ opacity: 0.8;
   height: 200px;
 }
 
-.ele_packet {
+.ele_packet, .ele_fruits,.mt_packet {
+  display: inline-block;
+}
+.ele_packet>image {
   width: 140px;
   height: 140px;
-  margin-right: 13px;
+  margin-right: 20px;
   margin-bottom: 20px;
 }
 
-.ele_fruits {
+.ele_fruits>image {
   width: 140px;
   height: 140px;
   margin-bottom: 20px;
 }
 
-.mt_packet {
+.mt_packet>image {
   width: 296px;
   height: 140px;
 }

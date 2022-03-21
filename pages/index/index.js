@@ -54,7 +54,7 @@ Page({
         url: '../random/random'
       }
     ],
-    infos1: "更多功能开发中",
+    infos1: "更多实用功能开发中",
     infos2: "拯救选择困难症和纠结患者",
     showUpdate: false,
     hidden: 'hidden'
