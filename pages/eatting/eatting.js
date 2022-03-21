@@ -161,6 +161,14 @@ Page({
               navH: App.globalData.navHeight,
               config: App.globalData.config
             })
+
+
+            if(options?.origin){
+              this.setData({
+                origin: options?.origin
+              })
+            }
+
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
         this.animate('#cont',[
@@ -228,6 +236,13 @@ Page({
     onShareAppMessage: function () {
 
     },
+    // onShareTimeline(){
+    //   return {
+    //     title: '你妈妈喊你领红包啦！',
+    //     query: 'origin=packet',
+    //     imageUrl:'/imges/share.png'
+    //   }
+    // },
     vibrateLong(){
         this.data.config.useShake && wx.vibrateLong();
      },

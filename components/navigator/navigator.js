@@ -4,8 +4,11 @@ Component({
      * 组件的属性列表
      */
     properties: {
-        navH: String
+        navH: String,
+        origin: String
     },
+
+    
 
     /**
      * 组件的初始数据
@@ -19,7 +22,14 @@ Component({
      */
     methods: {
         navBack(){
-            wx.navigateBack()
+          // if(this.data.origin){
+          //   wx.navigateTo({
+          //     url: '../../pages/index/index',
+          //   })
+          // }else {
+            
+          // }
+          wx.navigateBack()
         }
     }
 })

@@ -17,12 +17,16 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        const self = this;
-        console.log(self);
         this.setData({
               navH: App.globalData.navHeight,
               config: App.globalData.config
-            })
+        })
+
+        // if(options?.origin){
+        //   this.setData({
+        //     origin: options?.origin
+        //   })
+        // }
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
         this.animate('#cont',[
@@ -79,8 +83,20 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+      return {
+        title: '不要纠结啦，帮你做决定!',
+        imageUrl:'/imges/share.png'
+      }
     },
+    // onShareTimeline(){
+    //   return {
+    //     title: '你妈妈喊你领红包啦！',
+    //     query: 'origin=packet',
+    //     imageUrl:'/imges/share.png'
+    //   }
+    // },
+
+    
     vibrateShort() {
         this.data.config.useShake && wx.vibrateShort();
      },

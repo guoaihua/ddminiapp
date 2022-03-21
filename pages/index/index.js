@@ -96,6 +96,12 @@ Page({
         imageUrl:'/imges/share.png'
       }
     },
+    onShareTimeline(){
+      return {
+        title: '不要纠结啦，帮你做决定!',
+        imageUrl:'/imges/share.png'
+      }
+    },
   getUserInfo: function(e) {
    
     app.globalData.userInfo = e.detail.userInfo

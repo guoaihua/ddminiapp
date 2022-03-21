@@ -70,10 +70,10 @@ image {
 }
 .toPacket>view image {
   position: absolute;
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   top: -9px;
-  left: 15px;
+  left: 14px;
 }
 
 .toPacket>view .c_btn {
@@ -82,7 +82,7 @@ image {
   font-size: 18px;
   background: #FFA319;
   color: #FFFFFF;
-  padding: 0;
+  padding: 0 0 0 35px;
   height: 52px;
   line-height: 52px;
 }
