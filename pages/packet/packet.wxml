@@ -1,0 +1,20 @@
+<navigator class="navigator" navH="{{navH}}"></navigator>
+<header showHeaderbg="{{true}}" id="header" ></header>
+<imgLoader id="imgloader"></imgLoader>
+<view class="container">
+    <view class="cont" id="cont">
+      <view class="c_title">
+        <view class="gamename">{{game.name}}</view>
+        <view class="gametips">{{game.tips}}</view>
+      </view>
+      <view class="packets">
+        <image src="/imges/packet.png" class="packet_bg"></image>
+        <view>
+          <image bindtap="handleElePacket"  class="ele_packet" src="/imges/packet/ele_packet.png"></image>
+          <image bindtap="handleEleFruits"  class="ele_fruits" src="/imges/packet/ele_fruits.png"></image>
+        </view>
+        <image  bindtap="handleMtacket" class="mt_packet" src="/imges/packet/mt_packet.png"></image>
+      </view>
+
+    </view>
+</view>

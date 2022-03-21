@@ -1,0 +1,81 @@
+/* random/random/random.wxss */
+/* eatting/eatting/eatting.wxss */
+/* sport/sport/sport.wxss */
+page {
+  overflow: hidden;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background: #F8D7A2;
+  overflow: hidden;
+}
+
+.cont {
+width: 83%;
+height: 90%;
+padding: 0px 8.5%;
+position: absolute;
+top: 33.5%;
+background-color: #ffffff;
+border-top-left-radius: 16px;
+border-top-right-radius: 16px;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+}
+
+.c_title {
+  text-align: center;
+}
+.gamename {
+  font-family: "circle000";
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 29px;
+text-align: center;
+color: #2A2D32;
+  margin-bottom: 3%;
+  }
+
+.gametips {
+  font-family: Source Han Sans CN;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: -0.3px;
+color: #2A2D32;
+opacity: 0.8;
+}
+
+.packets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -70px;
+}
+
+.packet_bg {
+  width: 200px;
+  height: 200px;
+}
+
+.ele_packet {
+  width: 140px;
+  height: 140px;
+  margin-right: 13px;
+  margin-bottom: 20px;
+}
+
+.ele_fruits {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 20px;
+}
+
+.mt_packet {
+  width: 296px;
+  height: 140px;
+}

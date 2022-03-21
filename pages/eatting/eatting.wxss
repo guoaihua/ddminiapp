@@ -56,6 +56,30 @@ page {
   margin-top: -20%;
 }
 
+.toPacket {
+  margin-top: 20px;
+    width: 100%;
+}
+
+.toPacket>view {
+  position: relative;
+}
+.toPacket>view image {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: -18px;
+  left: 15px;
+}
+
+.toPacket>view .c_btn {
+  font-family: 'Source Han Sans CN';
+  font-size: 18px;
+  background: #FFA319;
+  color: #FFFFFF;
+  padding: 17px 0 18px;
+}
+
 .c_btn {
   padding: 17px 92px 18px;
 
@@ -270,9 +294,10 @@ page {
 }
 
 .take-out {
-  width: 100%;
+  width: 80%;
   display: flex;
-    justify-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .take-out>view:nth-child(1) {
   margin-right: 20px;

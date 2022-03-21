@@ -7,7 +7,8 @@
     "pages/random/random",
     "pages/sport/sport",
     "pages/dice/dice",
-    "pages/coin/coin"
+    "pages/coin/coin",
+    "pages/packet/packet"
   ],
   "window":{
     "backgroundTextStyle":"light",

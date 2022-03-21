@@ -6,6 +6,13 @@ Page({
   data: {
     gamelist: [
       {
+        imgsrc: '/imges/packet.png',
+        name: '天天领红包',
+        tips: '饿了么 & 美团外卖',
+        classname: 'packet',
+        url: '../packet/packet'
+      },
+      {
         imgsrc: '/imges/coin.png',
         name: '抛硬币',
         tips: '二选一',
@@ -61,8 +68,7 @@ Page({
   onLoad: function () {
       // 检查是否第一次进入
       try {
-        var isFirst =  wx.getStorageSync('isFirst');
-        console.log(isFirst);
+        var isFirst =  wx.getStorageSync('2020-3-16');
         if(!isFirst){
             // 第一次进入则推送最近更新内容
             this.setData({
@@ -70,7 +76,7 @@ Page({
             })
             wx.setStorage({
               data: true,
-              key: 'isFirst'
+              key: '2020-3-16'
             })
         }
       }catch(e) {

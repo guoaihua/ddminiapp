@@ -433,15 +433,20 @@ Page({
       const { result } = this.data;
         wx.navigateToMiniProgram({
             appId: 'wxece3a9a4c82f58c9',
-            path: `/pages/search/search?placeholder=${result}`
+            path: `pages/sharePid/web/index?scene=https%3A%2F%2Ftb.ele.me%2Fwow%2Fz%2Fele-ad%2Fssr%2Fadsearch%3Fspm%3Da2ogi.20933402.search.1%26spm-url%3Da2ogi.20933402.search.1%26activityIdentity%3DTAOKE_WECHAT_NEW_SEARCH%26result%3D%257B%257D%26meta%3D%257B%2522resultListPath%2522%253A%2522.%2522%257D%26directE%3D-s029EVRX74mfqpbXCIbiT4HLbAgwKUU4ZaqhZ1SHgthdTBDolXtS1tI7uF4BIhjHI5KddWxMhadguwZotOdcSWCovFv25DuALj4VFCbiPHsGjMno9kzIJ4hzN7Paf1MCwUyJk5MLLRx4B5RrJWldNiZ3lLpEAnXcSh4J074vx7XVAfXCdjFt0i1T8VAymApPELraxZlNo4Rh13T9f61EbhAgnjg0zSbOEY7wfMlvjyuylCOjNRGjbNNnzQPstQrAS1EvttgyU7FgDRiRhhd7uuaFec1hTcYaTWrKU25wGCCVikNaP30DKYdGTJyHwirL3zIBtwdd1FZm2eIJfPm2wT8Qq4elMs50dqTbnmfpoGOvGAvuLkPtIgwdfZcEW3ACvhCwV1cXZtalYvCdlQQBUMZs3yALclg26Q3gar6GHUQ3nEWnMLAS4hPQeb4R%26unionLens%3DlensId%25253AAPP%2525401647444317%2525402107f9b4_087d_17f93555357_0414%25254001%25253BeventPageId%25253A20150318020002192%26pid%3Dmm_2465640171_2590750365_111933000349%26es%3DNg5i1f%25252F9%25252F9Vt3vqbdXnGlk%25252BUfz9f9P2yJ9NdXOqx%25252BSwDdyxS9Plm%25252FEsi1ev%25252BwNDodB%25252BT0uY9FVs%25253D%26udf_temp_store%3D%257B%257D%26lensId%3DOPT%25401647757284%25402132a594_087b_17fa5fcd416_c8a3%254001%26scene%3DRAdEiZu%26alsc_exsrc%3DES0000008947~~shortCode~RAdEiZu%26ruleKey%3DWECHAT_MINIPROGRAM_LAYOUT%26trackMap%3D%257B%2522bucketId%2522%253A%2522290724%2522%257D%26ruleBranch%3D130003-290724&startTime=1647757287340`
           })
     },
     switchtoMeit(){
       const { result } = this.data;
       wx.navigateToMiniProgram({
-          appId: 'wx2c348cf579062e56',
-          path: `/packages/index/search/search?keyword=${result}`
+        appId: 'wx2c348cf579062e56',
+        path: `/packages/index/search/search?keyword=${result}`
         })
+    },
+    toPacket(){
+      wx.navigateTo({
+        url: '../packet/packet',
+      })
     },
     gotoMap(){
       const { location, result} = this.data;

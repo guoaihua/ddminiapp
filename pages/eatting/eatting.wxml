@@ -53,5 +53,11 @@
     <view hover-class="hoverStatus" class="showCard">
       <image src="/imges/eatting/bty.png" catchtap="switchtoMeit" hover-class="hoverStatus"></image>
     </view>
+    <view hover-class="hoverStatus" class="showCard toPacket">    
+      <view>
+        <image src="/imges/packet.png "></image>
+        <view class='c_btn' catchtap="toPacket">先领红包再点外卖</view>
+      </view>
+    </view>
   </view>
 </view>

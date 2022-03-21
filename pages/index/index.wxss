@@ -127,6 +127,31 @@ opacity: 0.8;
 font-family: Source Han Sans CN;
 } 
 
+.packet {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  background: #FFA319;
+  box-shadow: 0px 10px 20px rgba(255, 101, 91, 0.2);
+}
+
+.packet image {
+  filter: drop-shadow(0px 16px 30px rgba(180, 113, 13, 0.2));
+  margin-top: 10px;
+}
+
+.packet .itemname {
+  top: 29px;
+  width: 60%;
+  left: 34%;
+}
+
+.packet .itemtips {
+  top: 64px;
+  width: 60%;
+  left: 36%;
+}
+
 
 .coin {
   background: #FFA31A;
@@ -241,7 +266,7 @@ z-index: 9999;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
-  height: 360px;
+  height: 338px;
   background: #EAEEF3;
 border-radius: 12px;
 padding: 15px 20px;
@@ -291,11 +316,12 @@ opacity: 0.8;
 }
 
 .updateInfo {
-  width: 357px;
-  height: 195px;
+  width: 200px;
+  height: 200px;
   position: absolute;
-    bottom: -32px;
-    right: -75px;
+  bottom: -41px;
+  right: -24px;
+
 }
 
 @keyframes showCard {

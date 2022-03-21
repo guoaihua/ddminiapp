@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navigator": "/components/navigator/navigator",
+    "header": "/components/header/header",
+    "imgLoader": "/components/imgloader/imgloader"
+  }
+}

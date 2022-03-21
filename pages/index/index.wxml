@@ -13,10 +13,10 @@
        
       </view>
       <view class="list">
-          <view wx:for="{{gamelist}}" hover-class="hoverStatus" class="gamelist {{item.classname}}" bindtap="gotoDetail" data-url="{{item.url}}">
+          <view wx:for="{{gamelist}}" key='{{index}}' hover-class="hoverStatus" class="gamelist {{item.classname}}" bindtap="gotoDetail" data-url="{{item.url}}">
               <image src="{{item.imgsrc}}"></image>
-              <view class="itemname">{{item.name}}</view>
-              <view class="itemtips"> {{item.tips}}</view>
+                <view class="itemname">{{item.name}}</view>
+                <view class="itemtips"> {{item.tips}}</view>
           </view>
       </view>
 
@@ -34,9 +34,10 @@
   <view class="card" catchtap="clickModal">
     <image src="/imges/close.svg" class="closeModal" catchtap="closeModal"></image>
     <view class="title">功能更新</view>
-    <view class="info">叮咚决策器「今天吃什么」功能更新</view>
-    <view class="info">我们新增了「附近美食」功能，随机挑选你附近的美食店，并能快速查看店家地址和点外卖啦～</view>
-    <image  class="updateInfo" src="/imges/updateInfo.png"></image>
+    <view class="info">我们整合了「饿了么」和「美团外卖」的红包链接，让你能更方便的领取外卖红包，每天都可以领。</view>
+    <view class="info">
+点外卖之前，记得来领红包哦~</view>
+    <image  class="updateInfo" src="/imges/packet.png"></image>
   </view>
    
 </view>
