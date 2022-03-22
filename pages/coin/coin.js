@@ -49,6 +49,12 @@ Page({
 
         }.bind(this))
 
+        if (options?.origin) {
+            this.setData({
+                origin: options?.origin
+            })
+        }
+
         //下载音频
 
         if(App.globalData.config.useVoice){
@@ -104,7 +110,17 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+        return {
+            title: '不要纠结啦，叮咚决策器帮你做决定!',
+            imageUrl: '/imges/share-home.png'
+        }
+    },
+    onShareTimeline() {
+        return {
+            title: '不要纠结啦，叮咚决策器帮你做决定!',
+            query: 'origin=coin',
+            imageUrl: '/imges/share-home.png'
+        }
     },
     vibrateLong(){
        this.data.config.useShake && wx.vibrateLong();

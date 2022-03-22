@@ -61,6 +61,12 @@ Page({
         })
         // showHeaderbg: false
         this.selectComponent("#header").hideheader();
+
+        if (options?.origin) {
+            this.setData({
+                origin: options?.origin
+            })
+        }
         this.animate('#cont', [{
                 top: "33.5%",
                 ease: 'ease-in-out'
@@ -140,7 +146,17 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+        return {
+            title: '不要纠结啦，叮咚决策器帮你做决定!',
+            imageUrl: '/imges/share-home.png'
+        }
+    },
+    onShareTimeline() {
+        return {
+            title: '不要纠结啦，叮咚决策器帮你做决定!',
+            query: 'origin=turnplate',
+            imageUrl: '/imges/share-home.png'
+        }
     },
     vibrateLong(){
         this.data.config.useShake && wx.vibrateLong();

@@ -22,14 +22,13 @@ Component({
      */
     methods: {
         navBack(){
-          // if(this.data.origin){
-          //   wx.navigateTo({
-          //     url: '../../pages/index/index',
-          //   })
-          // }else {
-            
-          // }
-          wx.navigateBack()
+            if (this.data.origin) {
+                wx.navigateTo({
+                    url: '../../pages/index/index',
+                })
+            } else {
+                wx.navigateBack()
+          }
         }
     }
 })

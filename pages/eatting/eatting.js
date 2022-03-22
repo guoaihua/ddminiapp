@@ -234,15 +234,18 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+      return {
+        title: '不知道吃什么？我帮你参谋参谋',
+        imageUrl: '/imges/share-eat.png'
+      }
     },
-    // onShareTimeline(){
-    //   return {
-    //     title: '你妈妈喊你领红包啦！',
-    //     query: 'origin=packet',
-    //     imageUrl:'/imges/share.png'
-    //   }
-    // },
+  onShareTimeline() {
+    return {
+      title: '不知道吃什么？我帮你参谋参谋',
+      query: 'origin=packet',
+      imageUrl: '/imges/share-eat.png'
+    }
+  },
     vibrateLong(){
         this.data.config.useShake && wx.vibrateLong();
      },

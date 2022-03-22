@@ -1,4 +1,4 @@
-<navigator class="navigator" navH="{{navH}}"></navigator>
+<navigator class="navigator" navH="{{navH}}" origin="{{origin}}"></navigator>
 <header showHeaderbg="{{true}}" id="header" ></header>
 <imgLoader id="imgloader"></imgLoader>
 <view class="container">

@@ -22,11 +22,11 @@ Page({
               config: App.globalData.config
         })
 
-        // if(options?.origin){
-        //   this.setData({
-        //     origin: options?.origin
-        //   })
-        // }
+      if (options?.origin) {
+        this.setData({
+          origin: options?.origin
+        })
+      }
          // showHeaderbg: false
         this.selectComponent("#header").hideheader();
         this.animate('#cont',[
@@ -84,17 +84,17 @@ Page({
      */
     onShareAppMessage: function () {
       return {
-        title: '不要纠结啦，帮你做决定!',
-        imageUrl:'/imges/share.png'
+        title: '天天领红包，先领红包再点外卖',
+        imageUrl: '/imges/share-packet.png'
       }
     },
-    // onShareTimeline(){
-    //   return {
-    //     title: '你妈妈喊你领红包啦！',
-    //     query: 'origin=packet',
-    //     imageUrl:'/imges/share.png'
-    //   }
-    // },
+  onShareTimeline() {
+    return {
+      title: '天天领红包，先领红包再点外卖',
+      query: 'origin=packet',
+      imageUrl: '/imges/share-packet.png'
+    }
+  },
 
     
     vibrateShort() {

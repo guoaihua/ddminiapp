@@ -92,14 +92,14 @@ Page({
      */
     onShareAppMessage: function () {
       return {
-        title: '不要纠结啦，帮你做决定!',
-        imageUrl:'/imges/share.png'
+        title: '不要纠结啦，叮咚决策器帮你做决定!',
+        imageUrl: '/imges/share-home.png'
       }
     },
     onShareTimeline(){
       return {
-        title: '不要纠结啦，帮你做决定!',
-        imageUrl:'/imges/share.png'
+        title: '不要纠结啦，叮咚决策器帮你做决定!',
+        imageUrl: '/imges/share-home.png'
       }
     },
   getUserInfo: function(e) {
