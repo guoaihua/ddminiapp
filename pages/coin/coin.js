@@ -19,10 +19,10 @@ Page({
         showRight:  false,
         showReverse: false,
         gifsrc:{
-            right: "https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin_reverse.png?sign=d847d42107a49b2e4387eb315736cb01&t=1601302492",
-            reverse: "https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin_right.png?sign=99288f983d4642c5108e0f0fb56e9db8&t=1601302527"
+            right: "https://zm-1253465948.cos.ap-nanjing.myqcloud.com/static/dd/coin_right.png",
+            reverse: "https://zm-1253465948.cos.ap-nanjing.myqcloud.com/static/dd/coin_reverse.png"
         },
-        coinsrc: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/coin.mp3?sign=c661749d7e41cb10bad23eebced05dda',
+        coinsrc: 'https://zm-1253465948.cos.ap-nanjing.myqcloud.com/static/dd/coin.mp3',
         
         gifpools: {
 

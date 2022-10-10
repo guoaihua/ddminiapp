@@ -46,7 +46,7 @@ Page({
         showModal: false,
         turnlength: 3,
         anima_scale: '',
-        turnaudio: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/turn.mp3?sign=497ada0be8bb98dedc2adca2bed2aa7a'
+        turnaudio: 'https://zm-1253465948.cos.ap-nanjing.myqcloud.com/static/dd/turn.mp3'
     },
 
     /**

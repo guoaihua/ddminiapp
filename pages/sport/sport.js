@@ -18,7 +18,7 @@ Page({
         },
         animate: '',
         disable: false,
-        sportVoice: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/sport.mp3?sign=ffb9dd4ba191e11b12f095b236e9354a'
+        sportVoice: 'https://zm-1253465948.cos.ap-nanjing.myqcloud.com/static/dd/sport.mp3'
     },
 
     /**

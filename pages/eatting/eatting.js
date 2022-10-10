@@ -129,8 +129,8 @@ Page({
         nerbyFoods: [],
         foods: foods,
         showModal: false,
-        voiceSrc: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/eatting.mp3?sign=1479c281e551033d5baa68a72283828b',
-        resultSrc: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/result.mp3?sign=39649a7924659a4c92fcea75b4df875e',
+        voiceSrc: 'https://zm-1253465948.cos.ap-nanjing.myqcloud.com/static/dd/eatting.mp3',
+        resultSrc: 'https://zm-1253465948.cos.ap-nanjing.myqcloud.com/static/dd/result.mp3',
         location: null
     },
 

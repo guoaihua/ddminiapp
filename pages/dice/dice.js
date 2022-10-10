@@ -20,7 +20,7 @@ Page({
         }],
         cup_animation: '',
         pending: false,
-        dicesrc: 'https://7a69-ziming-patwj-1303043907.tcb.qcloud.la/static/dice.mp3?sign=f9ab584e1a2d964ecfa5ce0f77209ae6',
+        dicesrc: 'https://zm-1253465948.cos.ap-nanjing.myqcloud.com/static/dd/dice.mp3',
     },
 
     /**
