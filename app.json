@@ -27,6 +27,9 @@
       "desc": "你的位置信息将用于小程序位置接口的附近美食"
     }
   },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
   "plugins": {
     "chooseLocation": {
       "version": "1.0.5",
