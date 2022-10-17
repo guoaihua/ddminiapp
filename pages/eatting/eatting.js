@@ -149,8 +149,8 @@ Page({
           this.setData({
             current: 0
          })
-          // 这个时候就要主动获取周边信息了
-          self.getAuth();
+          // // 这个时候就要主动获取周边信息了
+          // self.getAuth();
         }else if(last === 1) {
           this.setData({
             current: 1
