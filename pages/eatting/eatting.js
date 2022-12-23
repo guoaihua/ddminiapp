@@ -103,13 +103,13 @@ const foods = [
     "蒸饺"
   ];
 const nerbyFoods = [];  
-const key = '7U7BZ-WQP63-KZK33-YVC6P-53PF3-2LFT3'; //使用在腾讯位置服务申请的key
-const category = '餐饮';
-var QQMapWX = require('../../libs/qqmap-wx-jssdk1.2/qqmap-wx-jssdk');
+// const key = '7U7BZ-WQP63-KZK33-YVC6P-53PF3-2LFT3'; //使用在腾讯位置服务申请的key
+// const category = '餐饮';
+// var QQMapWX = require('../../libs/qqmap-wx-jssdk1.2/qqmap-wx-jssdk');
 // 实例化API核心类
-var qqmapsdk = new QQMapWX({
-  key: key // 必填
-});
+// var qqmapsdk = new QQMapWX({
+//   key: key // 必填
+// });
 
 Page({
 
@@ -309,7 +309,7 @@ Page({
         switch(parseInt(index, 10)){
             case 0:
             current = 0;
-            self.getAuth();
+            // self.getAuth();
             break;
             case 1:
             current = 1;
@@ -400,42 +400,42 @@ Page({
     getList(location){
       const _this = this;
       // 调用接口
-      qqmapsdk.search({
-        keyword: category, //搜索关键词
-        location: {
-          latitude: location.latitude,
-          longitude: location.longitude
-        }, //设置周边搜索中心点
-        page_size: 20,
-        orderby: 'star',
-        success: function (res) { //搜索成功后的回调
-          var mks = []
-          for (var i = 0; i < res.data.length; i++) {
-            mks.push({ // 获取返回结果，放到mks数组中
-              title: res.data[i].title,
-              id: res.data[i].id,
-              latitude: res.data[i].location.lat,
-              longitude: res.data[i].location.lng,
-              iconPath: "/resources/my_marker.png", //图标路径
-              width: 20,
-              height: 20,
-              tel: res.data[i].tel,
-              address: res.data[i].address,
-              distance: res.data[i]._distance
-            })
-          }
-          _this.setData({ //设置markers属性，将搜索结果显示在地图中
-            nerbyFoods: mks.map(i=>i.title),
-            mks: mks
-          })
-        },
-        fail: function (res) {
-          console.log(res);
-        },
-        complete: function (res) {
-          console.log(res);
-        }
-      });
+      // qqmapsdk.search({
+      //   keyword: category, //搜索关键词
+      //   location: {
+      //     latitude: location.latitude,
+      //     longitude: location.longitude
+      //   }, //设置周边搜索中心点
+      //   page_size: 20,
+      //   orderby: 'star',
+      //   success: function (res) { //搜索成功后的回调
+      //     var mks = []
+      //     for (var i = 0; i < res.data.length; i++) {
+      //       mks.push({ // 获取返回结果，放到mks数组中
+      //         title: res.data[i].title,
+      //         id: res.data[i].id,
+      //         latitude: res.data[i].location.lat,
+      //         longitude: res.data[i].location.lng,
+      //         iconPath: "/resources/my_marker.png", //图标路径
+      //         width: 20,
+      //         height: 20,
+      //         tel: res.data[i].tel,
+      //         address: res.data[i].address,
+      //         distance: res.data[i]._distance
+      //       })
+      //     }
+      //     _this.setData({ //设置markers属性，将搜索结果显示在地图中
+      //       nerbyFoods: mks.map(i=>i.title),
+      //       mks: mks
+      //     })
+      //   },
+      //   fail: function (res) {
+      //     console.log(res);
+      //   },
+      //   complete: function (res) {
+      //     console.log(res);
+      //   }
+      // });
 
     },
     toggleModal(){

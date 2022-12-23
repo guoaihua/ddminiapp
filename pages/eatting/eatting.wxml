@@ -28,7 +28,7 @@
       {{game.start}}
       </view>
       <view class="sourceSelect" bindtap="sourceSelect">
-        <view class="nearby {{current === 0 ? 'active' : 'disable' }} {{pending ? 'disable' : '' }}" data-id="0">
+        <view class="nearby {{current === 0 ? 'active' : 'disable' }} disable  {{pending ? 'disable' : '' }}" data-id="0" style="pointer-events: none;">
           <image src="/imges/eatting/nearby.png"></image>
           附近美食 </view>
         <view class="recommend {{current === 1 ? 'active' : 'disable' }} {{pending ? 'disable' : '' }}" data-id="1">
