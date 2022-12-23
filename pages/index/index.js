@@ -5,13 +5,13 @@ const app = getApp()
 Page({
   data: {
     gamelist: [
-      {
-        imgsrc: '/imges/packet.png',
-        name: '天天领红包',
-        tips: '饿了么 & 美团外卖',
-        classname: 'packet',
-        url: '../packet/packet'
-      },
+      // {
+      //   imgsrc: '/imges/packet.png',
+      //   name: '天天领红包',
+      //   tips: '饿了么 & 美团外卖',
+      //   classname: 'packet',
+      //   url: '../packet/packet'
+      // },
       {
         imgsrc: '/imges/coin.png',
         name: '抛硬币',

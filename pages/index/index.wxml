@@ -29,7 +29,7 @@
       </view>
   </view>
 </view>
-
+<!-- 
 <view class="modal" wx:if="{{showUpdate}}" catchtap="closeModal">
   <view class="card" catchtap="clickModal">
     <image src="/imges/close.svg" class="closeModal" catchtap="closeModal"></image>
@@ -39,6 +39,5 @@
 点外卖之前，记得来领红包哦~</view>
     <image  class="updateInfo" src="/imges/packet.png"></image>
   </view>
-   
-</view>
+</view> -->
 </view> 
