@@ -19,6 +19,9 @@
                 <view class="itemtips"> {{item.tips}}</view>
           </view>
       </view>
+      <view class="dd-photo" bindtap="gotoDdPhoto">
+        <image src="/imges/dd-photo-logo.png" mode=""/>
+      </view>
 
        <view class="infos">
           <view class="tips1">{{infos1}}</view>

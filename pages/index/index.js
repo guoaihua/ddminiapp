@@ -126,6 +126,15 @@ Page({
       });
     }
   },
+  gotoDdPhoto(){
+   wx.navigateToMiniProgram({
+      appId: 'wx69abccfa61662325',
+      path: 'pages/index/index',
+      success(res) {
+        // 打开成功
+      }
+    })
+  },
   closeModal(){
     this.setData({
       showUpdate: false

@@ -13,12 +13,12 @@
             <view class="ques" wx:elif="{{status === 'ques'}}">
               <image  src="/imges/eatting/food.gif"></image> 
             </view>
-            <view class="answer" wx:else bindtap="toggleModal" >
-              <image class="focus-left" src="/imges/eatting/arrow.svg"  wx:if="{{!showModal}}"></image>
+            <view class="answer" wx:else  >
+              <!-- <image class="focus-left" src="/imges/eatting/arrow.svg"  wx:if="{{!showModal}}"></image> -->
               <view class="text"  wx:if="{{!showModal}}">
                  {{result}}
               </view>
-              <image class="focus-right" src="/imges/eatting/arrow.svg"  wx:if="{{!showModal}}"></image>
+              <!-- <image class="focus-right" src="/imges/eatting/arrow.svg"  wx:if="{{!showModal}}"></image> -->
              </view>
             <image class="plate" src="/imges/eatting/eatbg.png"></image>
       </view>
@@ -27,13 +27,13 @@
         <view class="c_btn {{pending ? 'disable' : '' }}" bindtap="clickbtn" >
       {{game.start}}
       </view>
-      <view class="sourceSelect" bindtap="sourceSelect">
+      <!-- <view class="sourceSelect" bindtap="sourceSelect">
         <view class="nearby {{current === 0 ? 'active' : 'disable' }} disable  {{pending ? 'disable' : '' }}" data-id="0" style="pointer-events: none;">
           <image src="/imges/eatting/nearby.png"></image>
           附近美食 </view>
         <view class="recommend {{current === 1 ? 'active' : 'disable' }} {{pending ? 'disable' : '' }}" data-id="1">
           <image src="/imges/eatting/random.png"></image> 随机推荐</view>
-      </view>
+      </view> -->
       </view>
  
     </view>
