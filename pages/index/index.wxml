@@ -1,5 +1,6 @@
 <!--index.wxml-->
-<view class="page_container {{showUpdate ? 'fix': ''}}">
+<!-- <view class="page_container {{showUpdate ? 'fix': ''}}"> -->
+<view class="page_container">
 <header  id="header" ></header> 
 <image src="/imges/header.png" class="header" id="headerbg"></image>
 <view class="container">
